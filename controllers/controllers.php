@@ -1,7 +1,8 @@
 <?php
 
-if(isset['mail'] && isset['mdp']){
-    return 'ok';
+if(isset($_POST['mail']) && isset($_POST['mdp'])){
+    //connection to check if user exist
+    echo 'ok';
 }
 
 

@@ -5,18 +5,24 @@ $(document).ready(function() {
 
         //alert(mail + " " + mdp);
         $.ajax({
-
-            url: '../../controllers/controllers.php',
+            url: '../controllers/controllers.php',
             type: 'POST',
             data: {
                 mail: mail,
                 mdp: mdp
             },
             success: function(data) {
-                alert('Data: ' + data);
+                if (data == 'ok') {
+                    alert('ok');
+                    location.href = '../view/home.php';
+                } else {
+                    alert('nok');
+                }
             },
-            error: function(request, error) {
-                alert("Request: " + request);
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest);
+                console.log(textStatus);
+                console.log(errorThrown);
             }
         });
     });
