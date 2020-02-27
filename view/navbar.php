@@ -21,6 +21,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Messagerie instantanée</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="faq.php">FAQ</a>
+      </li>
     </ul>
   </div>
 </nav>

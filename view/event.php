@@ -8,8 +8,14 @@ include 'navbar.php';
         <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
         <title>Evènements</title>
     </head>
-    <body>
-        <div class="container" style=" border: 2px solid red; border-radius: 5px;">
+    <body style="background-color : #f1f1f1;">
+        <div class="container" style="margin-top : 1em; background-color : white">
+            <div class=row>
+                <div class="text-center col-sm-12">
+                    <h1>Les évènements du CESI et son campus</h1>
+                    <br>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-4">
                     <p>PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO 
@@ -23,9 +29,8 @@ include 'navbar.php';
                 <div class="col-sm-6">
                     <p>Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
                     inter municipia crebra urbes duae faciunt claram Salamis et Paphus, 
-                    altera Iovis delubris altera Veneris templo insignis. tanta autem tamque 
-                   
-                    </p>.
+                    altera Iovis delubris altera Veneris templo insignis. tanta autem tamque.
+                    </p>
                 </div>
             </div>
         </div>
