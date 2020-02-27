@@ -33,6 +33,40 @@ include 'navbar.php';
                     </p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    </p>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <p>12/12/2020</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
+                    inter municipia crebra urbes duae faciunt claram Salamis et Paphus, 
+                    altera Iovis delubris altera Veneris templo insignis. tanta autem tamque.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    PHOTO PHOTO PHOTO PHOTO PHOTO 
+                    </p>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <p>12/12/2020</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
+                    inter municipia crebra urbes duae faciunt claram Salamis et Paphus, 
+                    altera Iovis delubris altera Veneris templo insignis. tanta autem tamque.
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
 </html>

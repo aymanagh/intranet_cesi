@@ -19,5 +19,9 @@
 #texte_index{
     font-size: 70px;
     font-weight: bold;
-    margin-top: 10%
+    margin-top: 10%;
+}
+
+#container-face{
+    max-width: 50em;
 }
