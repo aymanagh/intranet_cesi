@@ -1,8 +1,11 @@
-<header>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/connection.js"></script>
-    <script src="../assets/js/jquery.min.js"></script>
-</header>
+</head>
 <body>
     <div class="container">
         <div class="row">
@@ -20,7 +23,7 @@
                                 <input type="password" id="inputPassword" class="form-control" required>
                             </div>
                             <hr class="my-4">
-                            <button class="btn btn-lg btn-info btn-block" type="submit" id="btnConnection">Envoyer</button>
+                            <button class="btn btn-lg btn-info btn-block" id="btnConnection">Envoyer</button>
                         </form>
                     </div>
                 </div>
@@ -28,3 +31,4 @@
         </div>
     </div>
 </body>
+</html>
