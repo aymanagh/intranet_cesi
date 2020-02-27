@@ -17,7 +17,13 @@
         <a class="nav-link" href="#">Promo</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="event.php">Evènements</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#">Messagerie instantanée</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="faq.php">FAQ</a>
       </li>
     </ul>
   </div>
