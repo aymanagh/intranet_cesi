@@ -1,0 +1,23 @@
+.body_index {
+    background-image: url('../assets/cesi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    margin-top:5%
+}
+
+#btn_connexion {
+    background-color: #ffc252;
+}
+
+#btn_connexion:hover{
+    background-color: white;
+}
+
+#texte_index{
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 10%
+}

@@ -1,4 +1,5 @@
-<php></php>
+<!DOCTYPE html>
+<html>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
