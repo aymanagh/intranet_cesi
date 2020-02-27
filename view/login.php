@@ -1,5 +1,7 @@
 <header>
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <script type="text/javascript" src="../assets/js/connection.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
 </header>
 <body>
     <div class="container">
@@ -17,12 +19,8 @@
                                 <label for="inputPassword">Mot de passe</label>
                                 <input type="password" id="inputPassword" class="form-control" required>
                             </div>
-                            <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1"><br>
-                                <label class="custom-control-label" for="customCheck1">Se souvenir du mot de passe</label>
-                            </div>
                             <hr class="my-4">
-                            <button class="btn btn-lg btn-info btn-block" type="submit">Envoyer</button>
+                            <button class="btn btn-lg btn-info btn-block" type="submit" id="btnConnection">Envoyer</button>
                         </form>
                     </div>
                 </div>
