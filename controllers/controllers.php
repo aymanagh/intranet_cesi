@@ -1,9 +1,8 @@
 <?php
 
-/*function connexion()
-{
-    require('view/login.php');
-}*/
+if(isset['mail'] && isset['mdp']){
+    return 'ok';
+}
 
 
 
