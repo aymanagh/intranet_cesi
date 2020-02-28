@@ -5,7 +5,8 @@ include('navbar.php');
 
 <body>
     <div class="container-fluid">
-        <table id="table" data-toggle="table" data-search="true" data-show-columns="true" data-filter-control="true" data-show-search-clear-button="true" class="text-center">
+        <table id="table" data-toggle="table" data-search="true" data-show-columns="true" data-filter-control="true"
+        class="text-center table-borderless table-striped" style="border:none;" data-show-refresh="true">
             <thead>
                 <tr>
                     <th data-field="NOM" data-sortable="true">Nom</th>
