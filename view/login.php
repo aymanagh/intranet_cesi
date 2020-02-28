@@ -15,7 +15,6 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Connexion - Intranet CESI</h5>
-                        <form class="form-signin">
                             <label for="inputEmail">Adresse mail</label>
                             <div class="form-label-group">
                                 <input type="email" id="inputEmail" class="form-control" required autofocus>
@@ -26,7 +25,15 @@
                             </div>
                             <hr class="my-4">
                             <button class="btn btn-lg btn-info btn-block" id="btnConnection">Envoyer</button>
-                        </form>
+                    </div>
+                    <div class="text-center">
+                        <a href="forgetPassword.php">Mot de passe oublié ?</a>
+                    </div>
+                    <div class="alert alert-danger text-center" role="alert">
+                        Mot de passe ou adresse mail invalide !
+                    </div>
+                    <div class="alert alert-warning text-center" role="alert">
+                        Compte non existant !
                     </div>
                 </div>
             </div>
