@@ -5,15 +5,17 @@ include('navbar.php');
 
 <body>
     <div class="container-fluid">
-        <table id="table" data-toggle="table" data-search="true" data-show-columns="true" data-filter-control="true"
-        class="text-center table-borderless table-striped" style="border:none;" data-show-refresh="true">
+        <table id="table" data-toggle="table" data-search="true" data-filter-control="true" class="text-center table-borderless table-striped" style="border:none;">
             <thead>
                 <tr>
                     <th data-field="NOM" data-sortable="true">Nom</th>
                     <th data-field="PRENOM" data-sortable="true">Prénom</th>
                     <th data-field="ADRESSEMAIL" data-sortable="true">Adresse Mail</th>
                     <th data-field="PROMO" data-filter-control="select">Promo</th>
-                    <th data-field="ADMIN_USER"><div>Admin user</div><div><input type="checkbox" class="select-all checkbox active" name="select-all" /></div></th>
+                    <th data-field="ADMIN_USER">
+                        <div>Admin user</div>
+                        <div><input type="checkbox" class="select-all checkbox active" name="select-all" /></div>
+                    </th>
                 </tr>
             </thead>
             <tbody>

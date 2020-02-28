@@ -10,10 +10,12 @@
 
 #btn_connexion {
     background-color: #ffc252;
+    color:white;
 }
 
 #btn_connexion:hover{
-    background-color: white;
+    background-color:#6c757d;
+    color:white;
 }
 
 #texte_index{
@@ -24,4 +26,9 @@
 
 #container-face{
     max-width: 50em;
+}
+
+.btn-secondary{
+    background-color: #ffc252;
+    border: none;
 }
