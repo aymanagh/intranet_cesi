@@ -40,7 +40,7 @@
                                                             <div class="row ">
                                                                 <!-- Photo -->
                                                                 <div id="imageContainer" class="  col-md-4 ">
-                                                                    <img src="../assets/cesi.jpg" id="test" alt="photo" style="width: 100%;">
+                                                                    <img src="../assets/cesi.jpg" alt="photo" style="width: 100%;">
                                                                 </div>
                                                                 <!-- yellow decorator -->
                                                                 <div class="col-md-1 ml-auto"style="background: #ffc853" ></div>
@@ -152,5 +152,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+     <!-- Import Footer-->
+        <section id="footer">
+            <?php include('footer.php') ?>
+        </section>
     </body>
 </html>

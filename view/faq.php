@@ -8,7 +8,7 @@
     <body class="color-cesi-yellow">
         <!-- import Navbar -->
         <?php include('navbar.php')?>
-        <div class="container container-f">
+        <div class="container container-cesi">
             <div class="row ">
                 <div class="col-sm-12 text-center">
                     <h1>FOIRE AUX QUESTIONS</h1>
@@ -56,6 +56,10 @@
                 </div>
            </div>
         </div>
-        <?php include('footer.php') ?>
+        </br>
+        <!-- Import Footer-->
+        <section id="footer">
+            <?php include('footer.php') ?>
+        </section>
     </body>
 </html>
