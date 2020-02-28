@@ -32,6 +32,8 @@
                   NOM PRENOM UTILISATEUR
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <!-- Administration des profils que pour les admins -->
+                  <a class="dropdown-item" href="admin_profil.php">Administration des profils</a>
                   <a class="dropdown-item" href="#">Déconnexion</a>
                 </div>
               </li>
