@@ -45,7 +45,7 @@
                     Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
                     inter municipia crebra urbes duae faciunt claram Salamis et Paphus</p>
                 </div>
-           </div><div class="row" >
+           <div class="row" >
                 <div id ="" class="col-sm-12">
                     <p>Question : <br>
                     Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
@@ -56,7 +56,7 @@
                 </div>
            </div>
         </div>
-        </br>
+    </br>
         <!-- Import Footer-->
         <section id="footer">
             <?php include('footer.php') ?>

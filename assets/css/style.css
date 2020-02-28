@@ -52,11 +52,13 @@ nav a{
 nav a:hover{
   color:#ffc853
 }
+
 section .section-title {
     text-align: center;
     color: #25241f;
     margin-bottom: 50px;
     text-transform: uppercase;
+    
 }
 #footer {
     background: #25241f !important;
