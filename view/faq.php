@@ -1,15 +1,14 @@
-<?php
-include ('navbar.php')
-?>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
+        <!-- import Header -->
+        <?php include('header.php') ?>
         <title>FAQ</title>
     </head>
-    <body  style="background-color : #f1f1f1;">
-        <div class="container" style=" margin-top : 1em; background-color : white;">
+    <body class="color-cesi-yellow">
+        <!-- import Navbar -->
+        <?php include('navbar.php')?>
+        <div class="container container-f">
             <div class="row ">
                 <div class="col-sm-12 text-center">
                     <h1>FOIRE AUX QUESTIONS</h1>

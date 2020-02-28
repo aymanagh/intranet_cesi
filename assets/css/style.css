@@ -1,12 +1,19 @@
-#container-face{
+.container-face{
     max-width: 50em;
     background-color :white;
     margin-top : 1em ;
+}
+.container-f{
+  margin-top : 1em;
+  background-color : white;
 }
 .my-btn {
     color: #fff;
     background-color:#25241f;
     border-color:#25241f;
+  }
+  .my-btn:hover{
+    color :#ffc853
   }
 
 .color-cesi-blackk{
@@ -14,14 +21,16 @@
   }
 
 .color-cesi-yellow{
-    color :#ffc853
+    background-color :#ffc853
   }
 
 #imageContainer {
+  z-index : 999;
     transition:transform 0.25s ease;
 }
 
 #imageContainer:hover{
     -webkit-transform:scale(1.5); /* or some other value */
     transform:scale(3);
+    
 }
