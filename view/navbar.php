@@ -13,8 +13,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Accueil</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Promo</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Promo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="face.php">Trombinoscope</a>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="event.php">Evènements</a>
@@ -34,6 +39,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <!-- Administration des profils que pour les admins -->
                   <a class="dropdown-item" href="admin_profil.php">Administration des profils</a>
+                  <a class="dropdown-item" href="admin_promos.php">Administration des promotions</a>
                   <a class="dropdown-item" href="#">Déconnexion</a>
                 </div>
               </li>
