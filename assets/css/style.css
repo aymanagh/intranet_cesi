@@ -39,7 +39,19 @@
 section {
     padding: 60px 0;
 }
+nav li a{
+  color:white;
+}
+nav li a:hover{
+  color:#ffc853
+}
 
+nav a{
+  color:white;
+}
+nav a:hover{
+  color:#ffc853
+}
 section .section-title {
     text-align: center;
     color: #25241f;
