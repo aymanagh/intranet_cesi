@@ -5,6 +5,7 @@
         <?php include('header.php') ?>
         <title>FAQ</title>
     </head>
+
     <body class="color-cesi-yellow">
         <!-- import Navbar -->
         <?php include('navbar.php')?>
@@ -45,16 +46,7 @@
                     Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
                     inter municipia crebra urbes duae faciunt claram Salamis et Paphus</p>
                 </div>
-           <div class="row" >
-                <div id ="" class="col-sm-12">
-                    <p>Question : <br>
-                    Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
-                    inter municipia crebra urbes duae faciunt claram Salamis et Paphus</p>
-                    <p class="font-weight-bold">Réponse : <br>
-                    Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam Cyprum itidem insulam procul a continenti discretam et portuosam 
-                    inter municipia crebra urbes duae faciunt claram Salamis et Paphus</p>
-                </div>
-           </div>
+            </div>
         </div>
     </br>
         <!-- Import Footer-->
