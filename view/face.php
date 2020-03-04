@@ -60,7 +60,7 @@
                                                     </div>
                                                     <!-- Footer -->
                                                     <div class="modal-footer " style="background: #ffc853">
-                                                        <button type="button" class="btn my-btn" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn my-btn" data-dismiss="modal">Fermer</button>
                                                     </div>
                                                 </div>
                                             </div>
