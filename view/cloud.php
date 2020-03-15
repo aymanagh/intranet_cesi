@@ -5,18 +5,18 @@
         <?php include('header.php') ?>
         <title>Cloud numérique</title>
     </head>
-    <body class=color-cesi-yellow>
+    <body class=background-cesi-yellow>
         <!-- import Navbar -->
         <?php include('navbar.php')?>
         <div class="container container-cesi" style="margin-bottom : 1em" >
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h1>Téléchargez les cours numériques ici</h1>
+                    <h1>Téléchargez les cours numériques ici</h1><hr>
                     </br>
                 </div>
             </div>
         
-            <h2>Cours des RIL-2019</h2>
+            <h2>Cours - (Promotion)</h2>
                     
             <table class="table table-striped">
                 <thead>

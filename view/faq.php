@@ -6,13 +6,14 @@
         <title>FAQ</title>
     </head>
 
-    <body class="color-cesi-yellow" >
+    <body class="background-cesi-yellow" {margin:0;}>
         <!-- import Navbar -->
         <?php include('navbar.php')?>
+        <div class="main">
         <div class="container container-cesi" style="border-radius : 25px">
             <div class="row ">
                 <div class="col-sm-12 text-center">
-                    <h1>FOIRE AUX QUESTIONS</h1>
+                    <h1>FOIRE AUX QUESTIONS</h1><hr>
                     <h3>Vous n'avez pas de réponses à vos questions au sujet du CESI ou de son campus ?<br>
                      Cette section est faite pour toi !</h3>
                 </div>
@@ -47,6 +48,7 @@
                     inter municipia crebra urbes duae faciunt claram Salamis et Paphus</p>
                 </div>
             </div><hr>
+        </div>
         </div>
     </br>
         <!-- Import Footer-->

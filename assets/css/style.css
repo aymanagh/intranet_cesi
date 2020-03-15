@@ -20,9 +20,10 @@
       color : #25241f
   }
 
-.color-cesi-yellow{
+.background-cesi-yellow{
+    background-image: url("../font.png");
     background-color :#ffc853
-  }
+}
 
 #imageContainer {
   z-index : 999;
@@ -39,6 +40,7 @@
 section {
     padding: 60px 0;
 }
+
 nav li a{
   color:white;
 }
@@ -126,4 +128,14 @@ section .section-title {
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 }
