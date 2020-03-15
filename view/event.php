@@ -5,7 +5,7 @@
         <?php include('header.php') ?>
         <title>Evènements</title>
     </head>
-    <body class="background-cesi-yellow">
+    <body class="my-body" >
     <!-- import Navbar -->
     <?php include('navbar.php')?>
         <div class="container container-cesi" style="border-radius : 25px">

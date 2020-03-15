@@ -6,7 +6,7 @@
         <title>FAQ</title>
     </head>
 
-    <body class="background-cesi-yellow" {margin:0;}>
+    <body class="my-body">
         <!-- import Navbar -->
         <?php include('navbar.php')?>
         <div class="main">

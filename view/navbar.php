@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg" style ="background-color : #25241f;" >
+<nav class="navbar navbar-expand-lg fixed-top" style ="background-color : #25241f;" >
   <a class="navbar-brand" href="#">Intranet - CESI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars" style="color : white"></i>

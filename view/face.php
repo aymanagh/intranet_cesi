@@ -5,13 +5,13 @@
         <?php include('header.php') ?>
         <title>Trombinoscope</title>
     </head>
-    <body class="background-cesi-yellow">
+    <body  class="my-body">
     <!-- import Navbar -->
     <?php include('navbar.php')?>
-    <!-- Container -->
-        <div class="container container-face color-cesi-yellow">
+        <!-- Container -->
+        <div class="container container-face background-cesi-yellow ">
             <!-- Title Top -->
-            <div class="row text-center"style="background-color : white; border-radius : 25px">
+            <div class="row text-center"style="background-color : white; border-radius : 25px;">
                 <div class="col-sm-12" ><h3>PROMOTION : Nom promotion</h3></div>
             </div>
             <hr>
@@ -20,8 +20,8 @@
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
                     <img class=" card-img-top " src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body ">
-                        <h5 class="card-title">Chuck Norris</h5>
-                        <p class="card-text">Promo : (Promotion)</br>Apprenant</p>
+                        <h5 class="card-title">Chuck Norris (nom Prénom)</h5>
+                        <p class="card-text">Promo : (Nom)</br>Apprenant (rôle)</p>
                         <div class="row border-top border-dark">
                             <div class="col-sm-6">
                                 <a href="mailto:contact.cesi.fr"><span title="Contacter Chuck Norris"><i class="far fa-envelope"></i></span></a>
@@ -75,8 +75,7 @@
                         </div>
                     </div>
                 </div>
-    <!-- Face Card TEST -->
-
+                <!-- Face Card TEST -->
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
@@ -159,7 +158,7 @@
                 </div>
             </div>
         </div>
-     <!-- Import Footer-->
+        <!-- Import Footer-->
         <section id="footer">
             <?php include('footer.php') ?>
         </section>

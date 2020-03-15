@@ -6,7 +6,9 @@
 .container-cesi{
   margin-top : 1em;
   background-color : white;
+ 
 }
+
 .my-btn {
     color: #fff;
     background-color:#25241f;
@@ -20,9 +22,10 @@
       color : #25241f
   }
 
-.background-cesi-yellow{
+.my-body{
     background-image: url("../font.png");
-    background-color :#ffc853
+    background-color :#ffc853;
+    margin-top : 5em;
 }
 
 #imageContainer {
@@ -60,11 +63,10 @@ section .section-title {
     color: #25241f;
     margin-bottom: 50px;
     text-transform: uppercase;
-    
 }
+
 #footer {
     background: #25241f !important;
-    
 }
 #footer h5{
 	padding-left: 10px;
@@ -128,6 +130,7 @@ section .section-title {
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
+
 .navbar a {
   float: left;
   display: block;
