@@ -9,7 +9,7 @@
     <body class="my-body">
         <!-- import Navbar -->
         <?php include('navbar.php')?>
-        <div class="main">
+        <!-- Container -->
         <div class="container container-cesi" style="border-radius : 25px">
             <div class="row ">
                 <div class="col-sm-12 text-center">
@@ -49,11 +49,14 @@
                 </div>
             </div><hr>
         </div>
-        </div>
-    </br>
+        
         <!-- Import Footer-->
         <section id="footer">
             <?php include('footer.php') ?>
         </section>
     </body>
 </html>
+
+
+
+

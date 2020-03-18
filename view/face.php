@@ -9,17 +9,17 @@
     <!-- import Navbar -->
     <?php include('navbar.php')?>
         <!-- Container -->
-        <div class="container container-face background-cesi-yellow ">
+        <div class="container container-cesi ">
             <!-- Title Top -->
             <div class="row text-center"style="background-color : white; border-radius : 25px;">
                 <div class="col-sm-12" ><h3>PROMOTION : Nom promotion</h3></div>
             </div>
             <hr>
             <!-- Face Card -->
-            <div class="row text-center">
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+            <div class="row justify-content-center">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class=" card-img-top " src="../assets/cesi.jpg" alt="Card image cap">
-                    <div class="card-body ">
+                    <div class="card-body  ">
                         <h5 class="card-title">Chuck Norris (nom Prénom)</h5>
                         <p class="card-text">Promo : (Nom)</br>Apprenant (rôle)</p>
                         <div class="row border-top border-dark">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <!-- Face Card TEST -->
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 12rem;">
+                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>

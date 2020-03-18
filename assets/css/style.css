@@ -1,11 +1,9 @@
-.container-face{
-    max-width: 50em;
-    background-color :white;
-    margin-top : 1em ;
-}
+
 .container-cesi{
   margin-top : 1em;
   background-color : white;
+  margin-bottom : 1em;
+  border-radius : 25px;
  
 }
 
