@@ -9,7 +9,7 @@ $(document).ready(function() {
         //alert(mail + " " + mdp);
         
         $.ajax({
-            url: '../controllers/controllers.php',
+            url: 'data/connection',
             type: 'POST',
             data: {
                 mail: mail,
@@ -17,7 +17,7 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(data) {
-                //console.log(data);
+                console.log(data);
                 if(data['message'] == "mot de passe invalide"){
                     $(".alert-danger").show();
                     $(".alert-warning").hide();
@@ -42,7 +42,7 @@ $(document).ready(function() {
         //alert(mailForget);
         
         $.ajax({
-            url: '../controllers/controllers.php',
+            url: 'data/mailForget',
             type: 'POST',
             data: {
                 mailForget: mailForget
@@ -80,7 +80,7 @@ $(document).ready(function() {
                 $(".alert-warning").show();
             }else{
                 $.ajax({
-                    url: '../controllers/controllers.php',
+                    url: 'data/changePassword',
                     type: 'POST',
                     data: {
                         inputPassword: inputPassword,
