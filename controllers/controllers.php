@@ -61,7 +61,14 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0004";
                 }
-                break;                
+                break;
+            case "faq":
+                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                    $result = $this->faq();
+                } else {
+                    $result = "Erreur:GSx0004";
+                }
+                break;                 
             default:
                 $result = "Erreur:GSx0099";
                 break;
@@ -71,7 +78,7 @@ class Handler {
   
     /**
      * @function connexion
-     * Connexion de l'utilisateur par Arca avec son IPN et son mot de passe
+     * User Connexion with mail and password
      */
     function connection() {
         $response = [];
@@ -114,6 +121,10 @@ class Handler {
         echo $response;
     }
 
+    /**
+     * @function mailForget
+     * User Forget mail, check mail and send this
+     */
     function mailForget() {
         $response ="erreur";
 
@@ -175,6 +186,10 @@ class Handler {
         echo $response;
     }
 
+    /**
+     * @function changePassword
+     * User change password, check old password 
+     */ 
     function changePassword() {
         $response ="erreur";
 
@@ -239,6 +254,10 @@ class Handler {
         echo $response;
     }
 
+    /** 
+     * @function verifconnection
+     * check the connection with session and token
+     */
     function verifconnection(){
         $result = "";
         if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
@@ -260,8 +279,23 @@ class Handler {
         echo $result;
     }
 
+    /**
+     * @function deconnection
+     * Session destroy
+     */
     function deconnection(){
         session_destroy();
+    }
+
+    /**
+     * @function faq
+     * Display question and answer from faq
+     */
+    function faq(){
+        if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
+            $sql = "SELECT * FROM faq"
+        }
+        echo $sql
     }
 }
 
