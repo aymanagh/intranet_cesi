@@ -39,7 +39,8 @@
 /* Footer */
 @import url('../assets/font-awesome/all.min.css');
 section {
-    padding: 60px 0;
+    padding-top : 6em;
+    padding-bottom: 15em;
 }
 
 nav li a{
@@ -138,5 +139,23 @@ section .section-title {
   text-decoration: none;
   font-size: 17px;
 }
+.notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
 
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+
+  color: white;
+}
 }
