@@ -24,11 +24,21 @@
                                 <label for="inputPassword">Confirmer le mot de passe</label>
                                 <input type="password" id="inputPassword2" class="form-control" required>
                             </div>
+                            <br>
+                            <div class="alert alert-warning text-center notsame" role="alert">
+                                Rentrer le même mot de passe !
+                            </div>
+                            <div class="alert alert-warning text-center fail" role="alert">
+                                La demande n'est plus valable veuillez la renouveler !
+                            </div> 
+                            <div class="alert alert-success text-center" role="alert">
+                                Mot de passe changé avec succés !
+                            </div>
+                            <div class="alert alert-danger text-center" role="alert">
+                                Erreur : le compte n'éxiste pas !
+                            </div>
                             <hr class="my-4">
                             <button class="btn btn-lg btn-info btn-block" id="btnChangePassword">Changer</button>
-                    </div>
-                    <div class="alert alert-warning text-center" role="alert">
-                        Rentrer le même mot de passe !
                     </div>
                 </div>
             </div>

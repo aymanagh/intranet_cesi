@@ -5,11 +5,11 @@ RewriteEngine on
 # map neat URL to internal URL
 # Fichier qui va faire le lien entre l'url rentré et le controlleur utilisé.
 
-RewriteCond %{HTTP_HOST} http://localhost/cesi/intranet_cesi/$ [NC]
-RewriteRule ^(.*)$ http://localhost/cesi/intranet_cesi/$1 [QSA,R=301,L]
+RewriteCond %{HTTP_HOST} http://localhost/intranet_cesi/$ [NC]
+RewriteRule ^(.*)$ http://localhost/intranet_cesi/$1 [QSA,R=301,L]
 
 #Base de l'url apres le local host
-RewriteBase /cesi/intranet_cesi/   
+RewriteBase /intranet_cesi/   
 
 Options -Indexes
 
@@ -22,5 +22,4 @@ RewriteRule ^forgetPassword(/|)$ view/forgetPassword.php [nc,qsa]
 RewriteRule ^resetPassword(/|)$ view/resetPassword.php [nc,qsa]
 
 
-
-RewriteRule ^data/(connection|mailForget|changePassword)(/|) Controllers/RestController.php?type=$1 [nc,qsa]
+RewriteRule ^data/(connection|mailForget|changePassword)(/|) controllers/RestController.php?type=$1 [nc,qsa]

@@ -1,8 +1,6 @@
 $(document).ready(function() {
-    $(".alert-danger").hide();
-    $(".alert-warning").hide();
-    $(".alert-info").hide();
-
+    $(".alert").hide();
+    
     $('#btnConnection').click(function() {
         var mail = $('#inputEmail').val();
         var mdp = $('#inputPassword').val();
@@ -19,11 +17,14 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data);
                 if(data['message'] == "mot de passe invalide"){
+                    $(".alert").hide();
                     $(".alert-danger").show();
-                    $(".alert-warning").hide();
                 }else if(data['message'] == "compte non existant"){
-                    $(".alert-warning").show();
-                    $(".alert-danger").hide();
+                    $(".alert").hide();
+                    $(".dontexist").show();
+                }else if(data['message'] == "Veuillez remplir tous les champs"){
+                    $(".alert").hide();
+                    $(".missing").show();
                 }else{
                     location.href = "../view/home.php";
                 }
@@ -77,7 +78,8 @@ $(document).ready(function() {
             var token = $_GET('tok');
 
             if(inputPassword != inputPassword2){
-                $(".alert-warning").show();
+                $(".alert").hide();
+                $(".notsame").show();
             }else{
                 $.ajax({
                     url: 'data/changePassword',
@@ -91,10 +93,16 @@ $(document).ready(function() {
                     dataType: 'json',
                     success: function(data) {
                         console.log(data);
-                        if(data['message'] == "compte existant"){
-
+                        if(data['message'] == "le token a expiré"){
+                            $(".alert").hide();
+                            $(".fail").show();
+                        }else if(data['message'] == 'mot de passe changé'){
+                            $(".alert").hide();
+                            $(".alert-success").show();
                         }else{
-
+                            $(".alert").hide();
+                            $('.alert-danger').show();
+                            
                         }
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {

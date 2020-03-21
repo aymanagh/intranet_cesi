@@ -23,17 +23,21 @@
                                 <label for="inputPassword">Mot de passe</label>
                                 <input type="password" id="inputPassword" class="form-control" required>
                             </div>
+                            <br>
+                            <div class="alert alert-danger text-center" role="alert">
+                                Mot de passe invalide !
+                            </div>
+                            <div class="alert alert-warning text-center dontexist" role="alert">
+                                Compte non existant !
+                            </div>
+                            <div class="alert alert-warning text-center missing" role="alert">
+                                Veuillez remplir tous les champs
+                            </div>
                             <hr class="my-4">
                             <button class="btn btn-lg btn-info btn-block" id="btnConnection">Envoyer</button>
                     </div>
                     <div class="text-center">
                         <a href="forgetPassword">Mot de passe oublié ?</a>
-                    </div>
-                    <div class="alert alert-danger text-center" role="alert">
-                        Mot de passe ou adresse mail invalide !
-                    </div>
-                    <div class="alert alert-warning text-center" role="alert">
-                        Compte non existant !
                     </div>
                 </div>
             </div>

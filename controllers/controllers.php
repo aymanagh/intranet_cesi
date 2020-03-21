@@ -60,11 +60,10 @@ class Handler {
      * Connexion de l'utilisateur par Arca avec son IPN et son mot de passe
      */
     function connection() {
-        $response ="erreur";
+        $response = [];
 
         if(!empty($_POST['mail']) && !empty($_POST['mdp'])){
             //connection to check if user exist
-            $response = [];
         
             //get value from js
             $mail = $_POST['mail'];
@@ -88,6 +87,8 @@ class Handler {
             }
         
             closePDO($stmt);
+        }else{
+            $response['message'] = "Veuillez remplir tous les champs";
         }
     
         $response = json_encode($response);
@@ -118,7 +119,7 @@ class Handler {
         
                 //create token and date
                 $token = random_bytes(5);
-                $token = bin2hex($bytes);
+                $token = bin2hex($token);
                 $date = new DateTime();
                 $date = $date->format('Y-m-d H:i:s');
         
@@ -132,7 +133,7 @@ class Handler {
                 closePDO($pdo);
         
                 ////prepare url and send mail
-                $url = "http://localhost/cesi/intranet_cesi/view/resetPassword.php&reset=".$mail."?tok=".$token;
+                $url = "http://localhost/intranet_cesi/resetPassword?reset=".$mail."&tok=".$token;
         
                 $to      = 'ayman.agharbi@viacesi.fr';
                 $subject = 'Changer de mot de passe';
@@ -183,8 +184,31 @@ class Handler {
                 $date = new DateTime();
                 $date = $date->format('Y-m-d H:i:s');
         
-                $response['message'] = "compte existant";
-                $response['url'] = $url;
+                //$response['message'] = "compte existant";
+
+                $date1 = new DateTime($dateEndToken);
+                $date2 = new DateTime($date);
+                
+                $diff = $date2->diff($date1);
+                
+                $hours = $diff->h;
+                $hours = $hours + ($diff->days*24);
+
+                if(($hours < 1) && ($token == $user['token'])){
+                    $mdp = password_hash($password, PASSWORD_DEFAULT);
+
+                    $pdo = connectionPDO();
+                    $stmt = $pdo->prepare("UPDATE utilisateur SET mdp = ? WHERE adresse_email = ?");
+                    $stmt->bindParam(1, $mdp, PDO::PARAM_STR);
+                    $stmt->bindParam(2, $mail, PDO::PARAM_STR);
+                    $stmt->execute();
+                    closePDO($pdo);  
+                    
+                    $response['message'] = 'mot de passe changé';
+                }else{
+                    $response['message'] = 'le token a expiré';
+                }
+                
             }else{
                 $response['message'] = "compte non existant";
             }
