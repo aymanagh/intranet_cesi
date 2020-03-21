@@ -90,7 +90,7 @@ class Handler {
                     $date = date("Y-d-m");
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
-                    $_SESSION['tokenConnection'] = sha1($mail) . sha1($user['mdp']) . sha1($date);
+                    $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
@@ -243,6 +243,7 @@ class Handler {
                 $result = "token valide";
             }else{
                 $result = "token invalide";
+                //$result = $tokenverif." ".$_SESSION['tokenConnection'];
             }
 
         }else{
