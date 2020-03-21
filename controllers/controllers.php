@@ -55,6 +55,13 @@ class Handler {
                     $result = "Erreur:GSx0004";
                 }
                 break;
+            case "deconnection":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->deconnection();
+                } else {
+                    $result = "Erreur:GSx0004";
+                }
+                break;                
             default:
                 $result = "Erreur:GSx0099";
                 break;
@@ -251,6 +258,10 @@ class Handler {
         }
 
         echo $result;
+    }
+
+    function deconnection(){
+        session_destroy();
     }
 }
 

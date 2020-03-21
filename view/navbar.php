@@ -24,6 +24,10 @@
       <li class="nav-item">
         <a class="nav-link" href="faq">FAQ</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="deconnection()" href="">Déconnexion</a>
+      </li>
     </ul>
   </div>
+  
 </nav>

@@ -27,4 +27,4 @@ RewriteRule ^faq(/|)$ view/faq.php [nc,qsa]
 
 
 
-RewriteRule ^data/(connection|mailForget|changePassword|verifconnection)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+RewriteRule ^data/(connection|mailForget|changePassword|verifconnection|deconnection)(/|) controllers/RestController.php?type=$1 [nc,qsa]

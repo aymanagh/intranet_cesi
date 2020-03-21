@@ -27,3 +27,19 @@ $('document').ready(function(){
 
 
 });
+
+function deconnection(){
+    $.ajax({
+        url: "data/deconnection",
+        type: "POST",
+        async: false,
+        data: "",
+        success : function(response, status){
+           document.location.href = "";
+        },
+        error: function(response, status){
+            console.log(response);
+            console.log(status);
+        }
+    });
+}
