@@ -26,7 +26,7 @@ $(document).ready(function() {
                     $(".alert").hide();
                     $(".missing").show();
                 }else{
-                    location.href = "../view/home.php";
+                    location.href = "home";
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -92,7 +92,7 @@ $(document).ready(function() {
                     },
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data);
+                        //console.log(data);
                         if(data['message'] == "le token a expiré"){
                             $(".alert").hide();
                             $(".fail").show();

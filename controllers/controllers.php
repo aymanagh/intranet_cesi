@@ -31,7 +31,7 @@ class Handler {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $this->connection();
                 } else {
-                    $result = "Erreur:GSx0002";
+                    $result = "Erreur:GSx0001";
                 }
                 break;
             case "mailForget":
@@ -45,11 +45,18 @@ class Handler {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $this->changePassword();
                 } else {
-                    $result = "Erreur:GSx0002";
+                    $result = "Erreur:GSx0003";
+                }
+                break;
+            case "verifconnection":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->verifconnection();
+                } else {
+                    $result = "Erreur:GSx0004";
                 }
                 break;
             default:
-                $result = "Erreur:GSx0003";
+                $result = "Erreur:GSx0099";
                 break;
         }
         return $result;
@@ -79,6 +86,11 @@ class Handler {
             if(!empty($user)){
                 if (password_verify($mdp, $user['mdp'])) {
                     $response['message'] = "mot de passe valide";
+
+                    $date = date("Y-d-m");
+                    $_SESSION['mail'] = sha1($mail);
+                    $_SESSION['mdp'] = sha1($mdp);
+                    $_SESSION['tokenConnection'] = sha1($mail) . sha1($user['mdp']) . sha1($date);
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
@@ -144,10 +156,10 @@ class Handler {
                     'X-Mailer' => 'PHP/' . phpversion()
                 );
         
-                //$success = mail($to, $subject, $message, $headers);
-                // if (!$success) {
-                //     $errorMessage = error_get_last()['message'];
-                // }
+                $success = mail($to, $subject, $message, $headers);
+                if (!$success) {
+                    $errorMessage = error_get_last()['message'];
+                }
                 $response['message'] = "compte existant";
                 $response['url'] = $url;
             }
@@ -218,6 +230,26 @@ class Handler {
         
         $response = json_encode($response);
         echo $response;
+    }
+
+    function verifconnection(){
+        $result = "";
+        if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
+            $date = date("Y-d-m");
+
+            $tokenverif = $_SESSION['mail'] . $_SESSION['mdp'] . sha1($date);
+
+            if($tokenverif == $_SESSION['tokenConnection']){
+                $result = "token valide";
+            }else{
+                $result = "token invalide";
+            }
+
+        }else{
+            $result = "token inexistant";
+        }
+
+        echo $result;
     }
 }
 

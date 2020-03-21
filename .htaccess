@@ -20,6 +20,11 @@ DirectoryIndex view/login.php
 RewriteRule ^login(/|)$ view/login.php [nc,qsa]
 RewriteRule ^forgetPassword(/|)$ view/forgetPassword.php [nc,qsa]
 RewriteRule ^resetPassword(/|)$ view/resetPassword.php [nc,qsa]
+RewriteRule ^home(/|)$ view/home.php [nc,qsa]
+RewriteRule ^event(/|)$ view/event.php [nc,qsa]
+RewriteRule ^cloud(/|)$ view/cloud.php [nc,qsa]
+RewriteRule ^faq(/|)$ view/faq.php [nc,qsa]
 
 
-RewriteRule ^data/(connection|mailForget|changePassword)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+
+RewriteRule ^data/(connection|mailForget|changePassword|verifconnection)(/|) controllers/RestController.php?type=$1 [nc,qsa]
