@@ -14,19 +14,22 @@
         <a class="nav-link" href="#">Promo</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="event.php">Evènements</a>
+        <a class="nav-link" href="event">Evènements</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Messagerie instantanée</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="cloud.php">Cloud numérique</a>
+        <a class="nav-link" href="cloud">Cloud numérique</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="notifications.php">Mes notifications</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="faq.php">FAQ</a>
+        <a class="nav-link" href="faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="deconnection()" href="">Déconnexion</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
@@ -41,4 +44,5 @@
     </ul>
     </ul>
   </div>
+  
 </nav>
