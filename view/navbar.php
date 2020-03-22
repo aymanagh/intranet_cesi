@@ -10,7 +10,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Accueil</a><span class="sr-only">(current)</span></a>
       </li>
-      <ul class="navbar-nav">
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Promo
@@ -19,7 +19,7 @@
           <a class="dropdown-item" href="face">Trombinoscope</a>
         </div>
       </li>
-    </ul>
+    
       <li class="nav-item">
         <a class="nav-link" href="event">Evènements</a>
       </li>
@@ -39,15 +39,15 @@
         <a class="nav-link" onclick="deconnection()" href="">Déconnexion</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Panneau Administateur
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Panneau Administrateur
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <!-- Administration des profils que pour les admins -->
-          <a class="dropdown-item" href="admin_profil.php">Administration des profils</a>
-          <a class="dropdown-item" href="admin_promos.php">Administration des promotions</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
         </div>
-      </li>
+    </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <a href="./notifications.php" class="notification">
@@ -61,5 +61,4 @@
     </ul>
     </ul>
   </div>
-  
 </nav>

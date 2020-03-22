@@ -297,20 +297,17 @@ class Handler {
         $stmt = $pdo->prepare("SELECT * FROM faq");
 
         $faq = executeSelectQueryMSQL($stmt);
-       //$stmt->execute();
-        
-        //$faq = $stmt->fetch();
 
         closePDO($pdo);
 
-        if(!empty($faq)){
+        if($faq != "Empty"){
             $faq = $this->utf8_converter($faq);
             $response = json_encode($faq);
         }
         else {
             $response = "Vide";
         }
-
+        
         echo $response;
        
     }

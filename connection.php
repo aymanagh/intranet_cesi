@@ -20,28 +20,12 @@ function closePDO($pdo){
 
 function executeSelectQueryMSQL($stmt) {
     $stmt->execute();
-
-    $meta = $stmt->result_metadata();
-    while($field = $meta->fetch_field()){
-        $params[] = &$row[$field->name];
-    }
-
-    call_user_func_array(array($stmt, 'bind_result'), $params);
-
-    while($stmt->fetch()){
-        foreach($row as $key => $val){
-            $c[$key] = $val;
-        }
-
-        $resultset[] = $c;
-    }
-
-    $this->freeStatementSql($meta);
+    $resultset = $stmt->fetchAll(PDO::FETCH_ASSOC);    
 
     if (!empty($resultset)) {
         return $resultset;
     } else {
-        return "Aucune donnée à afficher !";
+        return "Empty";
     }
 }
 ?>
