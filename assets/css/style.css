@@ -148,7 +148,7 @@ section .section-title {
   font-size: 17px;
 }
 .notification {
-  background-color: #555;
+  background-color: #25241f;
   color: white;
   text-decoration: none;
   padding: 15px 26px;
@@ -163,7 +163,7 @@ section .section-title {
   right: -10px;
   padding: 5px 10px;
   border-radius: 50%;
-
   color: white;
 }
+
 }

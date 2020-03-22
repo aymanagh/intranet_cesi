@@ -59,9 +59,16 @@ class Handler {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $this->deconnection();
                 } else {
-                    $result = "Erreur:GSx0004";
+                    $result = "Erreur:GSx0005";
                 }
-                break;              
+                break;
+            case "faq":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->faq();
+                } else {
+                    $result = "Erreur:GSx0006";
+                }
+                break;             
             default:
                 $result = "Erreur:GSx0099";
                 break;
@@ -278,6 +285,45 @@ class Handler {
      */
     function deconnection(){
         session_destroy();
+    }
+
+    /**
+     * @function faq
+     * display data from faq table
+     */
+    function faq(){
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("SELECT * FROM faq");
+
+        $faq = executeSelectQueryMSQL($stmt);
+       //$stmt->execute();
+        
+        //$faq = $stmt->fetch();
+
+        closePDO($pdo);
+
+        if(!empty($faq)){
+            $faq = $this->utf8_converter($faq);
+            $response = json_encode($faq);
+        }
+        else {
+            $response = "Vide";
+        }
+
+        echo $response;
+       
+    }
+
+    function utf8_converter($array)
+    {
+        array_walk_recursive($array, function(&$item, $key){
+            if(!mb_detect_encoding($item, 'utf-8', true)){
+                    $item = utf8_encode($item);
+            }
+        });
+
+        return $array;
     }
 }
 

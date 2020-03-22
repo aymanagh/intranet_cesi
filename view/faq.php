@@ -3,6 +3,7 @@
     <head>
         <!-- import Header -->
         <?php include('header.php') ?>
+        
         <title>FAQ</title>
     </head>
 
