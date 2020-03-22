@@ -16,7 +16,7 @@
             </div>
             <hr>
             <!-- Face Card -->
-            <div class="row justify-content-center">
+            <div id ="container-face" class="row justify-content-center">
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class=" card-img-top " src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body  ">
@@ -163,4 +163,5 @@
             <?php include('footer.php') ?>
         </section>
     </body>
+    <script src="assets/js/face.js"></script>
 </html>
