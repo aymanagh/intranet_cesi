@@ -48,9 +48,9 @@ class Handler {
                     $result = "Erreur:GSx0003";
                 }
                 break;
-            case "verifconnection":
+            case "checkConnection":
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    $result = $this->verifconnection();
+                    $result = $this->checkConnection();
                 } else {
                     $result = "Erreur:GSx0004";
                 }
@@ -61,14 +61,7 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0004";
                 }
-                break;
-            case "faq":
-                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-                    $result = $this->faq();
-                } else {
-                    $result = "Erreur:GSx0004";
-                }
-                break;                 
+                break;              
             default:
                 $result = "Erreur:GSx0099";
                 break;
@@ -255,10 +248,10 @@ class Handler {
     }
 
     /** 
-     * @function verifconnection
+     * @function checkConnection
      * check the connection with session and token
      */
-    function verifconnection(){
+    function checkConnection(){
         $result = "";
         if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
             $date = date("Y-d-m");
@@ -285,17 +278,6 @@ class Handler {
      */
     function deconnection(){
         session_destroy();
-    }
-
-    /**
-     * @function faq
-     * Display question and answer from faq
-     */
-    function faq(){
-        if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
-            $sql = "SELECT * FROM faq"
-        }
-        echo $sql
     }
 }
 

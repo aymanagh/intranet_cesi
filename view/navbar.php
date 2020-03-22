@@ -23,7 +23,7 @@
         <a class="nav-link" href="cloud">Cloud numérique</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="notifications.php">Mes notifications</a>
+        <a class="nav-link" href="notifications">Mes notifications</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="faq">FAQ</a>

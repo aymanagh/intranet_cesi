@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="assets/js/jquery.min.js"></script>
     <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="assets/js/connection.js"></script>
 </head>
-<body>
+<body class="my-body">
     <div class="container">
-        <div class="row">
+        <div class="row,  w3-animate-bottom">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
@@ -33,10 +35,10 @@
                                 Veuillez remplir tous les champs
                             </div>
                             <hr class="my-4">
-                            <button class="btn btn-lg btn-info btn-block" id="btnConnection">Envoyer</button>
-                    </div>
-                    <div class="text-center">
-                        <a href="forgetPassword">Mot de passe oublié ?</a>
+                            <button class="btn my-btn btn-lg btn-block" id="btnConnection">Envoyer</button>
+                        <div class="text-center">
+                            <a href="forgetPassword">Mot de passe oublié ?</a>
+                        </div>
                     </div>
                 </div>
             </div>

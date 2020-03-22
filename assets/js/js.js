@@ -1,7 +1,7 @@
 $('document').ready(function(){ 
 
     $.ajax({
-        url: "data/verifconnection",
+        url: "data/checkConnection",
         type: "POST",
         async: false,
         date: "",
