@@ -4,7 +4,7 @@ $('document').ready(function(){
         url: "data/checkConnection",
         type: "POST",
         async: false,
-        date: "",
+        data: "",
         success : function(response, status){
             console.log(response);
 
