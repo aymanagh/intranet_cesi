@@ -18,7 +18,7 @@
             <!-- Face Card -->
             <div class="row justify-content-center">
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class=" card-img-top " src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class=" card-img-top " src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body  ">
                         <h5 class="card-title">Chuck Norris (nom Prénom)</h5>
                         <p class="card-text">Promo : (Nom)</br>Apprenant (rôle)</p>
@@ -46,7 +46,7 @@
                                                             <div class="row ">
                                                                 <!-- Photo -->
                                                                 <div id="imageContainer" class="  col-md-4 ">
-                                                                    <img src="../assets/cesi.jpg" alt="photo" style="width: 100%;">
+                                                                    <img src="assets/cesi.jpg" alt="photo" style="width: 100%;">
                                                                 </div>
                                                                 <!-- yellow decorator -->
                                                                 <div class="col-md-1 ml-auto"style="background: #ffc853" ></div>
@@ -77,7 +77,7 @@
                 </div>
                 <!-- Face Card TEST -->
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
                         <p class="card-text">Promo : RIL-2019 <br>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
                         <p class="card-text">Promo : RIL-2019 <br>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
                         <p class="card-text">Promo : RIL-2019 <br>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
                         <p class="card-text">Promo : RIL-2019 <br>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="../assets/cesi.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">
                         <h5 class="card-title">Chuck Norris</h5>
                         <p class="card-text">Promo : RIL-2019 <br>

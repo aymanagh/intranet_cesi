@@ -25,6 +25,14 @@
     background-color :#ffc853;
     margin-top : 5em;
 }
+.my-body-login{
+  background-image: url("../cesi.jpg");
+  height: 800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
 
 #imageContainer {
   z-index : 999;

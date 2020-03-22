@@ -9,7 +9,7 @@
     <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="assets/js/connection.js"></script>
 </head>
-<body class="my-body">
+<body class="my-body-login">
     <div class="container">
         <div class="row,  w3-animate-bottom">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">

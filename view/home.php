@@ -2,8 +2,9 @@
 <html>
     <head>
         <!-- import Header -->
-        <?php include('header.php') ?>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <?php include('header.php') ?>
+       
         <title>Accueil</title>
     </head>
     <body  class="my-body">
