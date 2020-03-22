@@ -10,9 +10,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Accueil</a><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Promo</a>
+      <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Promo
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <!-- Administration des profils que pour les admins -->
+          <a class="dropdown-item" href="face">Trombinoscope</a>
+        </div>
       </li>
+    </ul>
       <li class="nav-item">
         <a class="nav-link" href="event">Evènements</a>
       </li>
@@ -30,6 +38,19 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" onclick="deconnection()" href="">Déconnexion</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Panneau Administateur
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <!-- Administration des profils que pour les admins -->
+          <a class="dropdown-item" href="admin_profil.php">Administration des profils</a>
+          <a class="dropdown-item" href="admin_promos.php">Administration des promotions</a>
+          <a class="dropdown-item" href="#">Déconnexion</a>
+        </div>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
