@@ -4,8 +4,8 @@ function connectionPDO(){
     //Configuration Connection Database
 
     define("USER", 'root');
-    define("PASSWORD", '');
-    define("DSN", 'mysql:host=localhost;dbname=intranet_cesi;port=3308'); 
+    define("PASSWORD", 'root');
+    define("DSN", 'mysql:host=localhost;dbname=intranet_cesi;port=3306'); 
     //test
     try {
         $pdo = new PDO(DSN, USER, PASSWORD);
