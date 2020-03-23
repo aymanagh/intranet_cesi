@@ -151,8 +151,8 @@ class Handler {
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
-                    $_SESSION['nom'] = $user['last_name'];
-                    $_SESSION['prenom'] = $user['first_name'];
+                    $_SESSION['nom'] = strtolower($user['last_name']);
+                    $_SESSION['prenom'] = strtolower($user['first_name']);
 
                     //insert token and date
                     $pdo = connectionPDO();
@@ -324,7 +324,8 @@ class Handler {
             $tokenverif = $_SESSION['mail'] . $_SESSION['mdp'] . sha1($date);
 
             if($tokenverif == $_SESSION['tokenConnection']){
-                $result = "token valide";
+                $result = "token valide:!".$_SESSION['nom']." ".$_SESSION['prenom'];
+                
             }else{
                 $result = "token invalide";
                 //$result = $tokenverif." ".$_SESSION['tokenConnection'];
@@ -386,8 +387,7 @@ class Handler {
     function event(){
         //pdo
         $pdo = connectionPDO();
-      
-        $stmt = $pdo->prepare("SELECT * FROM  event");
+        $stmt = $pdo->prepare("SELECT * FROM  evenement");
 
         $event = executeSelectQueryMSQL($stmt);
 
@@ -409,16 +409,9 @@ class Handler {
      * display user profil filter by promo 
      */
     function face(){
-        // get session mail
-        $nomPrenom = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
-
         //pdo
         $pdo = connectionPDO();
-        
-        // request : select all user filter by promotion of session current user
-        $stmt = $pdo->prepare("SELECT user.last_name, first_name, address, promotion.name as nomPromo FROM user INNER JOIN promotion ON promotion.id_promotion = user.id_promotion WHERE promotion.name = (SELECT promotion.name FROM promotion INNER JOIN user ON promotion.id_promotion = user.id_promotion WHERE user.address = ? )");
-
-        $stmt->bindParam(1, $nomPrenom, PDO::PARAM_STR);
+        $stmt = $pdo->prepare("SELECT * FROM  utilisateur ");
 
         $face = executeSelectQueryMSQL($stmt);
 
@@ -435,7 +428,6 @@ class Handler {
         ob_clean();
         echo $response; 
     }
-    
     /**
      * @function utf8_converter
      * Make the conversion datas in utf-8
