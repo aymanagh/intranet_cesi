@@ -41,6 +41,6 @@ function deconnection(){
     });
 }
 
-window.addEventListener("beforeunload", function (event) {
-    alert();
-});
+window.onbeforeunload = function (e) {
+    this.deconnection();
+};
