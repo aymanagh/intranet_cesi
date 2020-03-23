@@ -47,13 +47,6 @@
     </li> -->
     </ul>
     <ul class="navbar-nav ml-auto">
-      <a href="" class="notification">
-        <i class="fas fa-bell"></i>
-        <span class="badge">12</span>&nbsp;&nbsp;
-      </a>
-    </ul>
-    </ul>
-    <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user" style="color : white; "></i>
@@ -66,6 +59,13 @@
           <a class="dropdown-item" href="#">Déconnexion</a>
         </div>
       </li>
+    </ul>
+    <ul class="navbar-nav">
+      <a href="" class="notification">
+        <i class="fas fa-bell"></i>
+        <span class="badge">12</span>&nbsp;&nbsp;
+      </a>
+    </ul>
     </ul>
     <ul class="navbar-nav">
         <a class="nav-link" onclick="deconnection()" href=""><i class="fas fa-sign-out-alt"></i></a>
