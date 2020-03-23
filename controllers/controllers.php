@@ -68,6 +68,20 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0006";
                 }
+                break;
+            case "event":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->event();
+                } else {
+                    $result = "Erreur:GSx0007";
+                }
+                break;
+            case "face":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->face();
+                } else {
+                    $result = "Erreur:GSx0008";
+                }
                 break;             
             default:
                 $result = "Erreur:GSx0099";
@@ -289,7 +303,7 @@ class Handler {
 
     /**
      * @function faq
-     * display data from faq table
+     * display ALL data from faq table
      */
     function faq(){
         //pdo
@@ -308,10 +322,59 @@ class Handler {
             $response = "Vide";
         }
         
-        echo $response;
-       
+        echo $response;  
     }
 
+    /**
+     * @function event
+     * display ALL event from event table 
+     */
+    function event(){
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("SELECT * FROM  evenement");
+
+        $event = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if($event != "Empty"){
+            $event = $this->utf8_converter($event);
+            $response = json_encode($event);
+        }
+        else {
+            $response = "Vide";
+        }
+        
+        echo $response; 
+    }
+    /**
+     * @function face
+     * display user profil filter by promo 
+     */
+    function face(){
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("SELECT * FROM  utilisateur ");
+
+        $face = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if($face != "Empty"){
+            $face = $this->utf8_converter($face);
+            $response = json_encode($face);
+        }
+        else {
+            $response = "Vide";
+        }
+        
+        echo $response; 
+    }
+    /**
+     * @function utf8_converter
+     * Make the conversion datas in utf-8
+     */
     function utf8_converter($array)
     {
         array_walk_recursive($array, function(&$item, $key){

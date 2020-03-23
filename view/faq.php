@@ -3,10 +3,8 @@
     <head>
         <!-- import Header -->
         <?php include('header.php') ?>
-        
         <title>FAQ</title>
     </head>
-
     <body class="my-body">
         <!-- import Navbar -->
         <?php include('navbar.php')?>
@@ -16,17 +14,18 @@
                 <div class="col-sm-12 text-center">
                     <h1>FOIRE AUX QUESTIONS</h1><hr>
                     <h3>Vous n'avez pas de réponses à vos questions au sujet du CESI ou de son campus ?<br>
-                     Cette section est faite pour toi !</h3>
+                     Cette section est faite pour vous !</h3>
                 </div>
             </div>
-            
         </div>
-        
+
         <!-- Import Footer-->
         <section id="footer">
             <?php include('footer.php') ?>
         </section>
     </body>
+    <!-- custom Script-->
+    <script src="assets/js/faq.js"></script>
 </html>
 
 
