@@ -119,6 +119,8 @@ class Handler {
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
+                    $_SESSION['nom'] = $user['nom'];
+                    $_SESSION['prenom'] = $user['prenom'];
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
@@ -132,6 +134,7 @@ class Handler {
         }
     
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -197,6 +200,7 @@ class Handler {
             }
         }
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -265,6 +269,7 @@ class Handler {
         }
         
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -289,7 +294,7 @@ class Handler {
         }else{
             $result = "token inexistant";
         }
-
+        ob_clean();
         echo $result;
     }
 
@@ -321,7 +326,8 @@ class Handler {
         else {
             $response = "Vide";
         }
-        
+
+        ob_clean();
         echo $response;  
     }
 
@@ -347,6 +353,7 @@ class Handler {
             $response = "Vide";
         }
         
+        ob_clean();
         echo $response; 
     }
     /**
@@ -370,6 +377,7 @@ class Handler {
             $response = "Vide";
         }
         
+        ob_clean();
         echo $response; 
     }
     /**
