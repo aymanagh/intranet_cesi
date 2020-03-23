@@ -101,7 +101,7 @@ class Handler {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $result = $this->insertMessage();
                 } else {
-                    $result = "Erreur:GSx0010";
+                    $result = "Erreur:GSx0011";
                 }
                 break;                 
                 
@@ -111,7 +111,7 @@ class Handler {
                     $result = $this->adminPromos();
                     
                 }else{
-                    $result = "Erreur:GSx0007";
+                    $result = "Erreur:GSx0012";
                 }
                 break;
             default:
