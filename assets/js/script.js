@@ -6,6 +6,8 @@ $(document).ready(function () {
     //table bootstrap4
     $('#table').bootstrapTable();
 
+
+
     //column checkbox select all or cancel
     $("input.select-all").click(function () {
         var checked = this.checked;

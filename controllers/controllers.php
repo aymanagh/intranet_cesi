@@ -68,9 +68,17 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0006";
                 }
-                break;             
+                break; 
+            case "adminPromos":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->adminPromos();
+                    
+                }else{
+                    $result = "Erreur:GSx0007";
+                }
+                break;
             default:
-                $result = "Erreur:GSx0099";
+                $result = "Erreur: GSx0099";
                 break;
         }
         return $result;
@@ -174,10 +182,10 @@ class Handler {
                     'X-Mailer' => 'PHP/' . phpversion()
                 );
         
-                $success = mail($to, $subject, $message, $headers);
-                if (!$success) {
+                //$success = mail($to, $subject, $message, $headers);
+                /*if (!$success) {
                     $errorMessage = error_get_last()['message'];
-                }
+                }*/
                 $response['message'] = "compte existant";
                 $response['url'] = $url;
             }
@@ -310,6 +318,30 @@ class Handler {
         
         echo $response;
        
+    }
+
+    /**
+     * @function admin_promos
+     * display data from promo table
+     */
+    function adminPromos(){
+        //pdo 
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("SELECT * FROM promo");
+
+        $admin_promos = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+        
+
+        if($admin_promos != "Empty"){
+            $admin_promos = $this->utf8_converter($admin_promos);
+            $response = json_encode($admin_promos);
+        }else{
+            $response = "Vide";
+        }
+        echo $response;
+
     }
 
     function utf8_converter($array)
