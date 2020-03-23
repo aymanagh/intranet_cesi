@@ -23,8 +23,6 @@ $('document').ready(function(){
             console.log(status);
         }
     });
-
-
 });
 
 function deconnection(){
@@ -42,3 +40,7 @@ function deconnection(){
         }
     });
 }
+
+window.addEventListener("beforeunload", function (event) {
+    alert();
+});

@@ -151,12 +151,12 @@ class Handler {
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
-                    $_SESSION['nom'] = $user['nom'];
-                    $_SESSION['prenom'] = $user['prenom'];
+                    $_SESSION['nom'] = $user['last_name'];
+                    $_SESSION['prenom'] = $user['first_name'];
 
                     //insert token and date
                     $pdo = connectionPDO();
-                    $stmt = $pdo->prepare("UPDATE utilisateur SET est_connecte = true WHERE adresse_email = ?");
+                    $stmt = $pdo->prepare("UPDATE user SET connected = true WHERE user.address = ?");
                     $stmt->bindParam(1, $mail, PDO::PARAM_STR);
                     $stmt->execute();
                     closePDO($pdo);
@@ -346,7 +346,7 @@ class Handler {
         $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
 
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("UPDATE utilisateur SET est_connecte = false WHERE adresse_email = ?");
+        $stmt = $pdo->prepare("UPDATE user SET connected = false WHERE user.address = ?");
         $stmt->bindParam(1, $mail, PDO::PARAM_STR);
         $stmt->execute();
         closePDO($pdo);
@@ -474,7 +474,7 @@ class Handler {
     function showConnected(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE est_connecte = true');
+        $stmt = $pdo->prepare('SELECT * FROM user WHERE connected = true');
 
         $faq = executeSelectQueryMSQL($stmt);
 
@@ -499,7 +499,7 @@ class Handler {
     function showMessage(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare('SELECT nom, prenom, messagerie.message FROM utilisateur INNER JOIN messagerie ON utilisateur.id_utilisateur = messagerie.id_utilisateur');
+        $stmt = $pdo->prepare('SELECT last_name, first_name, content FROM user INNER JOIN message ON user.id_user = message.id_user');
 
         $faq = executeSelectQueryMSQL($stmt);
 
@@ -518,8 +518,8 @@ class Handler {
     }   
 
      /**
-     * @function showConnected
-     * display ALL connected users from users utilisateur
+     * @function insertMessage
+     * insert message
      */
     function insertMessage(){
 
@@ -527,11 +527,22 @@ class Handler {
         
         $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
 
+        //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("");
+        $stmt = $pdo->prepare('SELECT id_user FROM user WHERE user.address = ?');
         $stmt->bindParam(1, $mail, PDO::PARAM_STR);
         $stmt->execute();
-        closePDO($pdo);
+        $user = $stmt->fetch();
+
+        $id_user = $user['id_user'];
+        echo var_dump($mail);  
+        
+        $pdo2 = connectionPDO();
+        $stmt2 = $pdo2->prepare("INSERT INTO message (id_user, content, date) VALUES (?, ?, NOW())");
+        $stmt2->bindParam(1, $id_user, PDO::PARAM_INT);
+        $stmt2->bindParam(2, $message, PDO::PARAM_STR);
+        $stmt2->execute();
+        closePDO($pdo2);
 
         ob_clean();
         echo "ok";  

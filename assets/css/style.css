@@ -212,3 +212,13 @@ section .section-title {
 }
 
 }
+
+#salleMessage {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#userConnected {
+  height: 600px;
+  overflow-y: scroll;
+}
