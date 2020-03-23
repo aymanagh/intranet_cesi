@@ -54,11 +54,21 @@
         <i class="fas fa-bell"></i>
         <span class="badge">12</span>&nbsp;&nbsp;
       </a>
-      <li>
-        <i class="fas fa-user" style="color : white; "></i>
-      </li>&nbsp;
-        <span style="color : white">Stéphane LAVARIE</span>
     </ul>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user" style="color : white; "></i>
+        <span style="color : white">Stéphane LAVARIE</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <!-- Administration des profils que pour les admins -->
+          <a class="dropdown-item" href="adminProfil">Administration des profils</a>
+          <a class="dropdown-item" href="adminPromos">Administration des promotions</a>
+          <a class="dropdown-item" href="#">Déconnexion</a>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

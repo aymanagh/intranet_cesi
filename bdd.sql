@@ -154,6 +154,7 @@ CREATE TABLE `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse_email`, `photo_url`, `mdp`, `token`, `date_token`, `id_promo`, `id_profil`) VALUES
 (1, 'agharbi', 'ayman', 'ayman.agharbi@viacesi.fr', NULL, '$2y$10$1KB8I6Y5aLWCf2aHkj33BOPA29RE39gqjzuSZTlv4v5EjyqarM/DS', '37811011d7', '2020-03-21 16:10:51', NULL, NULL),
 (2, 'lavarie', 'stephane', 'stephane.lavarie@viacesi.fr', NULL, '$2y$10$s9r3YL2guuMvH5YT6uPdl.2qD/ctnMHWRS3TWWJSiFV.wGbDqIeye', '9fa7924a81', '2020-03-21 20:46:52', NULL, NULL);
+(3, 'meunier', 'marjorie', 'marjorie.meunier@viacesi.fr', NULL, '1', NULL, NULL, NULL, NULL);
 
 --
 -- Index pour les tables déchargées
