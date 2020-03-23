@@ -435,6 +435,7 @@ class Handler {
         ob_clean();
         echo $response; 
     }
+    
     /**
      * @function utf8_converter
      * Make the conversion datas in utf-8
