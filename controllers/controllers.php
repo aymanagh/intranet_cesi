@@ -427,10 +427,7 @@ class Handler {
         ob_clean();
         echo $response; 
     }
-    /**
-     * @function utf8_converter
-     * Make the conversion datas in utf-8
-     */
+    
     /**
      * @function admin_promos
      * display data from promo table
@@ -454,7 +451,10 @@ class Handler {
         echo $response;
 
     }
-
+    /**
+     * @function utf8_converter
+     * Make the conversion datas in utf-8
+     */
     function utf8_converter($array)
     {
         array_walk_recursive($array, function(&$item, $key){
@@ -465,7 +465,6 @@ class Handler {
 
         return $array;
     }
-
 
     /**
      * @function showConnected
