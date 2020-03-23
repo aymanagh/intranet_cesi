@@ -1,0 +1,32 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+# Fichier qui va faire le lien entre l'url rentré et le controlleur utilisé.
+
+RewriteCond %{HTTP_HOST} http://localhost/intranet_cesi/$ [NC]
+RewriteRule ^(.*)$ http://localhost/intranet_cesi/$1 [QSA,R=301,L]
+
+#Base de l'url apres le local host
+RewriteBase /intranet_cesi/   
+
+Options -Indexes
+
+# page de départ
+DirectoryIndex view/login.php
+
+# redirige vers la page demandé sans changer l'url 
+RewriteRule ^login(/|)$ view/login.php [nc,qsa]
+RewriteRule ^forgetPassword(/|)$ view/forgetPassword.php [nc,qsa]
+RewriteRule ^resetPassword(/|)$ view/resetPassword.php [nc,qsa]
+RewriteRule ^home(/|)$ view/home.php [nc,qsa]
+RewriteRule ^face(/|)$ view/face.php [nc,qsa]
+RewriteRule ^event(/|)$ view/event.php [nc,qsa]
+RewriteRule ^cloud(/|)$ view/cloud.php [nc,qsa]
+RewriteRule ^notifications(/|)$ view/notifications.php [nc,qsa]
+RewriteRule ^faq(/|)$ view/faq.php [nc,qsa]
+
+
+
+RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq)(/|) controllers/RestController.php?type=$1 [nc,qsa]

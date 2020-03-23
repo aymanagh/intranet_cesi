@@ -5,13 +5,13 @@
         <?php include('header.php') ?>
         <title>Evènements</title>
     </head>
-    <body class="color-cesi-yellow">
+    <body class="my-body" >
     <!-- import Navbar -->
     <?php include('navbar.php')?>
-        <div class="container container-cesi">
+        <div class="container container-cesi" style="border-radius : 25px">
             <div class=row>
                 <div class="text-center col-sm-12">
-                    <h1>Les évènements du CESI et son campus</h1>
+                    <h1>Les évènements du CESI et son campus</h1><hr>
                     <br>
                 </div>
             </div>

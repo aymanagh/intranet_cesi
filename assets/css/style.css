@@ -41,10 +41,15 @@
     background-color :white;
     margin-top : 1em ;
 }
+
 .container-cesi{
   margin-top : 1em;
   background-color : white;
+  margin-bottom : 1em;
+  border-radius : 25px;
+ 
 }
+
 .my-btn {
     color: #fff;
     background-color:#25241f;
@@ -58,9 +63,19 @@
       color : #25241f
   }
 
-.color-cesi-yellow{
-    background-color :#ffc853
-  }
+.my-body{
+    background-image: url("../font.png");
+    background-color :#ffc853;
+    margin-top : 5em;
+}
+.my-body-login{
+  background-image: url("../cesi.jpg");
+  height: 800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
 
 #imageContainer {
   z-index : 999;
@@ -75,8 +90,10 @@
 /* Footer */
 @import url('../assets/font-awesome/all.min.css');
 section {
-    padding: 60px 0;
+    padding-top : 6em;
+    padding-bottom: 15em;
 }
+
 nav li a{
   color:white;
 }
@@ -90,12 +107,14 @@ nav a{
 nav a:hover{
   color:#ffc853
 }
+
 section .section-title {
     text-align: center;
     color: #25241f;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
+
 #footer {
     background: #25241f !important;
     position: relative;
@@ -163,4 +182,33 @@ section .section-title {
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.notification {
+  background-color: #25241f;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  color: white;
+}
+
 }
