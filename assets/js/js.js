@@ -40,3 +40,7 @@ function deconnection(){
         }
     });
 }
+
+window.addEventListener("beforeunload", function (event) {
+    alert();
+});

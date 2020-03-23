@@ -3,8 +3,11 @@
  * Display answers/questions about CESI
  */
 $('document').ready(function(){
-    showConnected();
-    showMessage()
+    window.setInterval(function(){
+        showConnected();
+        showMessage();
+      }, 1000);
+
 });
 
 function showConnected(){
@@ -15,16 +18,23 @@ function showConnected(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
+           $('#utilisateur').html('');
            if(response != "Vide"){
             response.forEach(function(entry) {
                 
-                var html = '<li id ="utilisateur'+entry['id_utilisateur']+'">';
-                html += '<strong>'+entry['nom']+' '+entry['prenom']+'</strong>';
+                var html = '<li id ="utilisateur'+entry['id_user']+'">';
+                html += '<strong>'+entry['last_name']+' '+entry['first_name']+'</strong>';
                 html += '</li>';
 
                 $('#utilisateur').append(html);
             })
+           }else{
+                var html = '<li>';
+                html += '<strong>Personne de connecté</strong>';
+                html += '</li>';
+
+                $('#utilisateur').append(html);
            }
         },
         error: function(response, status){
@@ -43,16 +53,23 @@ function showMessage(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
+           $('#message').html('');
            if(response != "Vide"){
             response.forEach(function(entry) {
                 
                 var html = '<div>';
-                html += '<strong>'+entry['nom']+' '+entry['prenom']+' : '+entry['message']+'</strong>';
+                html += entry['last_name']+' '+entry['first_name']+' : <strong>'+entry['content']+'</strong>';
                 html += '</div>';
 
                 $('#message').append(html);
             })
+           }else{
+                var html = '<div>';
+                html += '<strong>Pas de message à afficher</strong>';
+                html += '</div>';
+
+                $('#message').append(html);
            }
         },
         error: function(response, status){
@@ -65,7 +82,7 @@ function showMessage(){
 function insertMessage(){
     var message = $('#send').val();
 
-    alert(message);
+    //alert(message);
     $.ajax({
         url: "data/insertMessage",
         type: "POST",
@@ -73,9 +90,9 @@ function insertMessage(){
         data: {
             message: message
         },
-        dataType: "json",
         success : function(response, status){
-
+            showMessage();
+            $('#send').val('');
         },
         error: function(response, status){
             console.log(response);

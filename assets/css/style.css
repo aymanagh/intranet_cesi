@@ -1,3 +1,46 @@
+.body_index {
+    background-image: url('../cesi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    margin-top:5%
+}
+
+#div_btn_connexion {
+    margin-bottom: 50px;
+}
+
+#btn_connexion {
+    background-color: #ffc252;
+    color:white;
+}
+
+#btn_connexion:hover{
+    background-color:#6c757d;
+    color:white;
+}
+
+#texte_index{
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+#container-face{
+    max-width: 50em;
+}
+
+.btn-secondary{
+    background-color: #ffc252;
+    border: none;
+}
+.container-face{
+    max-width: 50em;
+    background-color :white;
+    margin-top : 1em ;
+}
 
 .container-cesi{
   margin-top : 1em;
@@ -74,6 +117,8 @@ section .section-title {
 
 #footer {
     background: #25241f !important;
+    position: relative;
+    bottom:0;
 }
 #footer h5{
 	padding-left: 10px;
@@ -166,4 +211,14 @@ section .section-title {
   color: white;
 }
 
+}
+
+#salleMessage {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#userConnected {
+  height: 600px;
+  overflow-y: scroll;
 }
