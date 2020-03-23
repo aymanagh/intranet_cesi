@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <!-- Import Script -->
 <script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/script.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="../bootstrap-4.3.1-dist/js/bootstrap-table.min.js"></script>

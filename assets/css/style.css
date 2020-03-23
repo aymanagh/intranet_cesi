@@ -8,6 +8,10 @@
     margin-top:5%
 }
 
+#div_btn_connexion {
+    margin-bottom: 50px;
+}
+
 #btn_connexion {
     background-color: #ffc252;
     color:white;
@@ -94,6 +98,8 @@ section .section-title {
 }
 #footer {
     background: #25241f !important;
+    position: relative;
+    bottom:0;
 }
 #footer h5{
 	padding-left: 10px;
