@@ -119,6 +119,8 @@ class Handler {
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
+                    $_SESSION['nom'] = $user['nom'];
+                    $_SESSION['prenom'] = $user['prenom'];
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
