@@ -386,7 +386,8 @@ class Handler {
     function event(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM  evenement");
+      
+        $stmt = $pdo->prepare("SELECT * FROM  event");
 
         $event = executeSelectQueryMSQL($stmt);
 
@@ -408,9 +409,16 @@ class Handler {
      * display user profil filter by promo 
      */
     function face(){
+        // get session mail
+        $nomPrenom = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM  utilisateur ");
+        
+        // request : select all user filter by promotion of session current user
+        $stmt = $pdo->prepare("SELECT user.last_name, first_name, address, promotion.name as nomPromo FROM user INNER JOIN promotion ON promotion.id_promotion = user.id_promotion WHERE promotion.name = (SELECT promotion.name FROM promotion INNER JOIN user ON promotion.id_promotion = user.id_promotion WHERE user.address = ? )");
+
+        $stmt->bindParam(1, $nomPrenom, PDO::PARAM_STR);
 
         $face = executeSelectQueryMSQL($stmt);
 
@@ -428,6 +436,7 @@ class Handler {
         echo $response; 
     }
     
+   
     /**
      * @function admin_promos
      * display data from promo table

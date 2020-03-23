@@ -9,10 +9,10 @@
     <!-- import Navbar -->
     <?php include('navbar.php')?>
         <!-- Container -->
-        <div class="container container-cesi ">
+        <div class="container-face-title container container-cesi ">
             <!-- Title Top -->
-            <div class="row text-center"style="background-color : white; border-radius : 25px;">
-                <div class="col-sm-12" ><h3>PROMOTION : Nom promotion</h3></div>
+            <div id ="container-face-promotion" class="row text-center"style="background-color : white; border-radius : 25px;">
+               <!-- face.js -->
             </div>
             <hr>
             <!-- Face Card -->
