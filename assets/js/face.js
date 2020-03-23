@@ -15,6 +15,8 @@ function face(){
         success : function(response, status){
            console.log(response);
            if(response != "Vide"){
+               var html = '<div class="row text-center"style="background-color : white; border-radius : 25px;">'+
+               '<div class="col-sm-12" ><h3>PROMOTION : Nom promotion</h3></div></div><hr>'
             response.forEach(function(entry) {
                 
                 console.log(entry);

@@ -332,6 +332,7 @@ class Handler {
     function event(){
         //pdo
         $pdo = connectionPDO();
+      
         $stmt = $pdo->prepare("SELECT * FROM  evenement");
 
         $event = executeSelectQueryMSQL($stmt);
