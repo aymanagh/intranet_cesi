@@ -132,6 +132,7 @@ class Handler {
         }
     
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -197,6 +198,7 @@ class Handler {
             }
         }
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -265,6 +267,7 @@ class Handler {
         }
         
         $response = json_encode($response);
+        ob_clean();
         echo $response;
     }
 
@@ -289,7 +292,7 @@ class Handler {
         }else{
             $result = "token inexistant";
         }
-
+        ob_clean();
         echo $result;
     }
 
@@ -321,7 +324,8 @@ class Handler {
         else {
             $response = "Vide";
         }
-        
+
+        ob_clean();
         echo $response;  
     }
 
@@ -346,6 +350,7 @@ class Handler {
             $response = "Vide";
         }
         
+        ob_clean();
         echo $response; 
     }
     /**
@@ -369,6 +374,7 @@ class Handler {
             $response = "Vide";
         }
         
+        ob_clean();
         echo $response; 
     }
     /**

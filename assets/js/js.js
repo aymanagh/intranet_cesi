@@ -7,7 +7,6 @@ $('document').ready(function(){
         data: "",
         success : function(response, status){
             console.log(response);
-
             switch(response){
                 case "token inexistant" :
                     document.location.href = "login";
@@ -35,7 +34,7 @@ function deconnection(){
         async: false,
         data: "",
         success : function(response, status){
-           document.location.href = "";
+            document.location.href = "login";
         },
         error: function(response, status){
             console.log(response);
