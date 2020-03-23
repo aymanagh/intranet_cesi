@@ -19,7 +19,7 @@
                     <th data-field="NOM" data-sortable="true">Nom</th>
                     <th data-field="PRENOM" data-sortable="true">Prénom</th>
                     <th data-field="ADRESSEMAIL" data-sortable="true">Adresse Mail</th>
-                    <th data-field="Promo">Promo</th>
+                    <th data-field="Promo" data-filter-control="select">Promo</th>
                     <th data-field="ADMIN_USER">
                         <div>Admin user</div>
                         <div><input type="checkbox" class="select-all checkbox active" name="select-all" /></div>

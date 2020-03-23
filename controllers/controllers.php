@@ -100,13 +100,13 @@ class Handler {
         
             //pdo
             $pdo = connectionPDO();
-            $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE adresse_email = ? ');
+            $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? ');
             $stmt->bindParam(1, $mail, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch();
             
             if(!empty($user)){
-                if (password_verify($mdp, $user['mdp'])) {
+                if (password_verify($mdp, $user['password'])) {
                     $response['message'] = "mot de passe valide";
 
                     $date = date("Y-d-m");
@@ -145,7 +145,7 @@ class Handler {
         
             //pdo
             $pdo = connectionPDO();
-            $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE adresse_email = ? ');
+            $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? ');
             $stmt->bindParam(1, $mail, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch();
@@ -153,7 +153,7 @@ class Handler {
         
             if(!empty($user)){
                 //url value
-                $mail = $user['adresse_email'];
+                $mail = $user['address'];
         
                 //create token and date
                 $token = random_bytes(5);
@@ -163,7 +163,7 @@ class Handler {
         
                 //insert token and date
                 $pdo = connectionPDO();
-                $stmt = $pdo->prepare("UPDATE utilisateur SET token = ?, date_token = ? WHERE adresse_email = ?");
+                $stmt = $pdo->prepare("UPDATE user SET token = ?, date_token = ? WHERE user.address = ?");
                 $stmt->bindParam(1, $token, PDO::PARAM_STR);
                 $stmt->bindParam(2, $date, PDO::PARAM_STR);
                 $stmt->bindParam(3, $mail, PDO::PARAM_STR);
@@ -212,14 +212,14 @@ class Handler {
         
             //pdo
             $pdo = connectionPDO();
-            $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE adresse_email = ? AND token = ?');
+            $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? AND token = ?');
             $stmt->bindParam(1, $mail, PDO::PARAM_STR);
             $stmt->bindParam(2, $token, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch();
             
             if(!empty($user)){
-                $mail = $user['adresse_email'];
+                $mail = $user['address'];
                 $token = $user['token'];
                 $dateEndToken = $user['date_token'];
                 
@@ -240,7 +240,7 @@ class Handler {
                     $mdp = password_hash($password, PASSWORD_DEFAULT);
 
                     $pdo = connectionPDO();
-                    $stmt = $pdo->prepare("UPDATE utilisateur SET mdp = ? WHERE adresse_email = ?");
+                    $stmt = $pdo->prepare("UPDATE user SET user.password = ? WHERE user.address = ?");
                     $stmt->bindParam(1, $mdp, PDO::PARAM_STR);
                     $stmt->bindParam(2, $mail, PDO::PARAM_STR);
                     $stmt->execute();
@@ -327,7 +327,7 @@ class Handler {
     function adminPromos(){
         //pdo 
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM promo");
+        $stmt = $pdo->prepare("SELECT * FROM promotion");
 
         $admin_promos = executeSelectQueryMSQL($stmt);
 
