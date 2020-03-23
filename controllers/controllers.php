@@ -106,7 +106,7 @@ class Handler {
             $user = $stmt->fetch();
             
             if(!empty($user)){
-                if (password_verify($mdp, $user['mdp'])) {
+                if (password_verify($mdp, $user['password'])) {
                     $response['message'] = "mot de passe valide";
 
                     $date = date("Y-d-m");
@@ -153,7 +153,7 @@ class Handler {
         
             if(!empty($user)){
                 //url value
-                $mail = $user['adresse_email'];
+                $mail = $user['address'];
         
                 //create token and date
                 $token = random_bytes(5);
@@ -219,7 +219,7 @@ class Handler {
             $user = $stmt->fetch();
             
             if(!empty($user)){
-                $mail = $user['adresse_email'];
+                $mail = $user['address'];
                 $token = $user['token'];
                 $dateEndToken = $user['date_token'];
                 

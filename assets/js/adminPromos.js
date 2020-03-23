@@ -18,7 +18,7 @@ $('document').ready(function(){
                     html += '<td>Jean</td>';
                     html += '<td data-value="Michel">Michele</td>';
                     html += '<td data-text="jean.michel@example.com">jean.michel@example.com</td>';
-                    html += '<td data-value="'+ entry['id_promo'] +'">' + entry['nom'] +'</td>';
+                    html += '<td data-value="'+ entry['id_promotion'] +'">' + entry['name'] +'</td>';
                     html += '<td class="active"> <input type="checkbox" class="select-item checkbox" name="select-item" value="" /></td>';
                     html += '</td>';
                     
