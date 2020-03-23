@@ -15,18 +15,21 @@ function face(){
         success : function(response, status){
            console.log(response);
            if(response != "Vide"){
-               var html = '<div class="row text-center"style="background-color : white; border-radius : 25px;">'+
-               '<div class="col-sm-12" ><h3>PROMOTION : Nom promotion</h3></div></div><hr>'
+            var test = ""; 
+
             response.forEach(function(entry) {
                 
                 console.log(entry);
                 // built html in template with datas
+                // result request filter by promo with email session user
+                test = '<div class="col-sm-12" ><h3>PROMOTION : '+entry['nomPromo']+'</h3></div></div><hr>'
+                // for each on user filter by promo 
                 var html = 
                     '<div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">'+
                         '<img class=" card-img-top " src="assets/cesi.jpg" alt="Card image cap">'+
                         '<div class="card-body  ">'+
                             '<h5 class="card-title">'+entry['nom']+' '+entry['prenom']+'</h5>'+
-                            '<p class="card-text">Promo : (Nom)</br>Apprenant (rôle)</p>'+
+                            '<p class="card-text">Promo : '+entry['nomPromo']+'</br>Apprenant (rôle)</p>'+
                             '<div class="row border-top border-dark">'+
                                 '<div class="col-sm-6">'+
                                     '<a href="mailto:'+entry['adresse_email']+'"><span title="Contacter Chuck Norris"><i class="far fa-envelope"></i></span></a>'+
@@ -57,7 +60,7 @@ function face(){
                                                                     '<div class="col-md-1 ml-auto"style="background: #ffc853" ></div>'+
                                                                     '<!-- Informations -->'+
                                                                     '<div class=" test col-md-7 ml-auto text-left">'+
-                                                                        '<span class="blockquote-footer">Promotion : (nom)</span></br>'+
+                                                                        '<span class="blockquote-footer">Promotion : '+entry['nomPromo']+'</span></br>'+
                                                                         '<span class="blockquote-footer">Campus : CESI (ville) </span></br>'+
                                                                         '<span class="blockquote-footer">Entreprise : (nom entreprise) </span></br>'+
                                                                     '</div>'+
@@ -81,7 +84,8 @@ function face(){
                         '</div>'+
                     '</div>'
                 $('#container-face').append(html);
-            })
+            });
+            $('#container-face-promotion').append(test);
            }
         },
         error: function(response, status){

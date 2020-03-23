@@ -361,9 +361,14 @@ class Handler {
      * display user profil filter by promo 
      */
     function face(){
+        // get session info
+        $nomPrenom = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+        
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM  utilisateur ");
+        $stmt = $pdo->prepare("SELECT utilisateur.nom, prenom, adresse_email, promo.nom as nomPromo FROM utilisateur INNER JOIN promo ON promo.id_promo = utilisateur.id_promo WHERE promo.nom = (SELECT promo.nom FROM promo INNER JOIN utilisateur ON promo.id_promo = utilisateur.id_promo WHERE utilisateur.adresse_email = ? )");
+
+        $stmt->bindParam(1, $nomPrenom, PDO::PARAM_STR);
 
         $face = executeSelectQueryMSQL($stmt);
 
