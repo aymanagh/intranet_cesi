@@ -58,16 +58,16 @@ function showMessage(){
            if(response != "Vide"){
             response.forEach(function(entry) {
                 
-                var html = '<div>';
+                var html = '<li>';
                 html += entry['last_name']+' '+entry['first_name']+' : <strong>'+entry['content']+'</strong>';
-                html += '</div>';
+                html += '</li>';
 
                 $('#message').append(html);
             })
            }else{
-                var html = '<div>';
+                var html = '<li>';
                 html += '<strong>Pas de message à afficher</strong>';
-                html += '</div>';
+                html += '</li>';
 
                 $('#message').append(html);
            }

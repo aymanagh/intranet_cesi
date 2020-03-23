@@ -222,3 +222,7 @@ section .section-title {
   height: 600px;
   overflow-y: scroll;
 }
+
+#message li:nth-of-type(odd){
+  background-color: lightgrey;
+}

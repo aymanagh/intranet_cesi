@@ -12,7 +12,7 @@
         <div id="container-chat" class="container container-cesi" style="border-radius : 25px">
             <div class="row">
                 <div class="col-8" id="salleMessage">
-                    <p>Canal de discussion</p>
+                    <p>Canal de discussion :</p>
                     <ul id="message">
                     </ul>                   
                     <div class="input-group mb-3">

@@ -507,7 +507,7 @@ class Handler {
     function showMessage(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare('SELECT last_name, first_name, content FROM user INNER JOIN message ON user.id_user = message.id_user');
+        $stmt = $pdo->prepare('SELECT last_name, first_name, content FROM user INNER JOIN message ON user.id_user = message.id_user ORDER BY date ASC LIMIT 50');
 
         $faq = executeSelectQueryMSQL($stmt);
 
