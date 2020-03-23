@@ -82,7 +82,29 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0008";
                 }
-                break;             
+                break; 
+            case "showConnected":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->showConnected();
+                } else {
+                    $result = "Erreur:GSx0009";
+                }
+                break;                 
+            case "showMessage":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->showMessage();
+                } else {
+                    $result = "Erreur:GSx0010";
+                }
+                break;   
+            case "insertMessage":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->insertMessage();
+                } else {
+                    $result = "Erreur:GSx0010";
+                }
+                break;                 
+                
             default:
                 $result = "Erreur:GSx0099";
                 break;
@@ -110,7 +132,8 @@ class Handler {
             $stmt->bindParam(1, $mail, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch();
-            
+            closePDO($stmt);
+
             if(!empty($user)){
                 if (password_verify($mdp, $user['mdp'])) {
                     $response['message'] = "mot de passe valide";
@@ -121,14 +144,21 @@ class Handler {
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
                     $_SESSION['nom'] = $user['nom'];
                     $_SESSION['prenom'] = $user['prenom'];
+
+                    //insert token and date
+                    $pdo = connectionPDO();
+                    $stmt = $pdo->prepare("UPDATE utilisateur SET est_connecte = true WHERE adresse_email = ?");
+                    $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+                    $stmt->execute();
+                    closePDO($pdo);
+
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
             }else{
                 $response['message'] = "compte non existant";
             }
-        
-            closePDO($stmt);
+    
         }else{
             $response['message'] = "Veuillez remplir tous les champs";
         }
@@ -303,6 +333,15 @@ class Handler {
      * Session destroy
      */
     function deconnection(){
+
+        $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("UPDATE utilisateur SET est_connecte = false WHERE adresse_email = ?");
+        $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+        $stmt->execute();
+        closePDO($pdo);
+
         session_destroy();
     }
 
@@ -393,6 +432,79 @@ class Handler {
 
         return $array;
     }
+
+
+    /**
+     * @function showConnected
+     * display ALL connected users from users utilisateur
+     */
+    function showConnected(){
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE est_connecte = true');
+
+        $faq = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if($faq != "Empty"){
+            $faq = $this->utf8_converter($faq);
+            $response = json_encode($faq);
+        }
+        else {
+            $response = "Vide";
+        }
+
+        ob_clean();
+        echo $response;  
+    }
+
+     /**
+     * @function showConnected
+     * display ALL connected users from users utilisateur
+     */
+    function showMessage(){
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare('SELECT nom, prenom, messagerie.message FROM utilisateur INNER JOIN messagerie ON utilisateur.id_utilisateur = messagerie.id_utilisateur');
+
+        $faq = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if($faq != "Empty"){
+            $faq = $this->utf8_converter($faq);
+            $response = json_encode($faq);
+        }
+        else {
+            $response = "Vide";
+        }
+
+        ob_clean();
+        echo $response;  
+    }   
+
+     /**
+     * @function showConnected
+     * display ALL connected users from users utilisateur
+     */
+    function insertMessage(){
+
+        $message = $_POST['message'];
+        
+        $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+        
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("");
+        $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+        $stmt->execute();
+        closePDO($pdo);
+
+        ob_clean();
+        echo "ok";  
+    }   
+
+    
 }
 
 

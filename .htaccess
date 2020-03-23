@@ -26,5 +26,6 @@ RewriteRule ^event(/|)$ view/event.php [nc,qsa]
 RewriteRule ^cloud(/|)$ view/cloud.php [nc,qsa]
 RewriteRule ^notifications(/|)$ view/notifications.php [nc,qsa]
 RewriteRule ^faq(/|)$ view/faq.php [nc,qsa]
+RewriteRule ^chat(/|)$ view/chat.php [nc,qsa]
 
-RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|event|face)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|event|face|showConnected|showMessage|insertMessage)(/|) controllers/RestController.php?type=$1 [nc,qsa]
