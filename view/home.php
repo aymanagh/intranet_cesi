@@ -11,7 +11,7 @@
     <!-- import Navbar -->
     <?php include('navbar.php')?>
         <!-- Container -->
-        <div class="container container-cesi " style="max-width : 100em; background-color: #cecdcb">
+        <div class="container container-cesi " style="max-width : 100em; background-color: whitesmoke">
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="w3-animate-bottom">
@@ -26,7 +26,7 @@
                 <div class="col text-center"><h4 class=" font-weight-bold">Evènements</h4></div>
             </div>
             <div class="row ml-4 mr-4 mb-5">
-                <div class="col border border-dark rounded-lg card-planning">
+                <div class="col border rounded-lg card-planning">
                     <div class="row">
                         <div class="col-sm-12 text-center card-planning-title">
                             14/05/2020 Remise PFR - Lot 1
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col border border-dark ml-1 mr-1 rounded-lg card-time">
+                <div class="col border ml-1 mr-1 rounded-lg card-time">
                     <div>
                         <div class="row notif" style="margin-top: 1em;">
                             <div class="col-sm-2">
@@ -142,7 +142,7 @@
                         <hr>
                     </div>
                 </div>
-                <div class="col border border-dark rounded-lg overflow-auto actu card-info">
+                <div class="col border rounded-lg overflow-auto actu card-info">
                     <div class="row event">
                         <div class="col-sm-2">
                             <img src="./assets/notif.svg" alt="img-notif" style="background-color: #ffc853; border-radius: 2em;">
@@ -231,7 +231,7 @@
                 <div class="col text-center"><h4 class=" font-weight-bold">Tweets</h4></div>
             </div>
             <div class="row ml-4 mr-4">
-                <div class="col border border-dark rounded-lg card-info">
+                <div class="col border rounded-lg card-info">
                     <div class="row m-2 card-actu">
                         <div class="col-sm-6">
                             <img class="img-actu" src="./assets/covid-19.jpg" alt="img-covid">
@@ -277,7 +277,7 @@
                     </div>
                     <hr>
                 </div>
-                <div class="col border border-dark ml-1 mr-1 rounded-lg card-planning card-actu-global">
+                <div class="col border ml-1 mr-1 rounded-lg card-planning card-actu-global">
                     <div class="row m-2 card-actu">
                         <div class="col-sm-6">
                             <img class="img-actu" src="./assets/linus.jpg" alt="img-linus">
@@ -334,10 +334,11 @@
                     </div>
                     <hr>
                 </div>
-                <div class="col border border-dark rounded-lg card-info">
+                <div class="col border rounded-lg card-info">
                     <a class="twitter-timeline" href="https://twitter.com/GroupeCESI?ref_src=twsrc%5Etfw">Tweets by GroupeCESI</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 </div>
-            </div><hr>
+            </div>
+            <hr>
         </div>
         <!-- Import Footer-->
         <section id="footer">
