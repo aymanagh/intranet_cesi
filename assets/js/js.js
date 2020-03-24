@@ -6,7 +6,7 @@ $('document').ready(function(){
         async: false,
         data: "",
         success : function(response, status){
-            console.log(response);
+           //console.log(response);
             switch(response){
                 case "token inexistant" :
                     document.location.href = "login";
@@ -18,12 +18,12 @@ $('document').ready(function(){
                     break;
             }
             response = response.split(':!');
-            console.log(response);
+           //console.log(response);
             $("#namSpan").html(response[1]);
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 });
@@ -38,8 +38,8 @@ function deconnection(){
             document.location.href = "login";
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }

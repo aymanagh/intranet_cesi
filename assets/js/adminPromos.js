@@ -12,24 +12,24 @@ $('document').ready(function () {
             data: "",
             dataType: "json",
             success: function (response, status) {
-                console.log(response);
+               //console.log(response);
                 if (response != "Vide") {
                     if(!$('#data').html('')){
                         $('#data').html('');
                     }
                     response.forEach(function (entry) {
-                        console.log(entry);
+                       //console.log(entry);
 
                         var html = '<option value="' + entry['id_promotion'] + '">' + entry['name'] + '</option>';
 
-                        $('#data').append(html);
+                        $('.data').append(html);
 
                     })
                 }
             },
             error: function (response, status) {
-                console.log(response);
-                console.log(status);
+               //console.log(response);
+               //console.log(status);
             }
         });
     }
@@ -42,13 +42,13 @@ $('document').ready(function () {
             data: "",
             dataType: "json",
             success: function (response, status) {
-                console.log(response);
+               //console.log(response);
                 if (response != "Vide") {
                     if(!$('#datatable').html('')){
                         $('#datatable').html('');
                     }
                     response.forEach(function (entry) {
-                        console.log(entry);
+                       //console.log(entry);
 
                         var table = '<tr>';
                         table += '<td data-value="' + entry['first_name'] + '">' + entry['first_name'] + '</td>';
@@ -68,8 +68,8 @@ $('document').ready(function () {
                 }
             },
             error: function (response, status) {
-                console.log(response);
-                console.log(status);
+               //console.log(response);
+               //console.log(status);
             }
         });
     }
@@ -95,14 +95,14 @@ $('document').ready(function () {
             dataType: "json",
 
             success: function (response, status) {
-                console.log(response);
+               //console.log(response);
                 if (response != "Vide") {
                     if(!$('#datatable').html('')){
                         $('#datatable').html('');
                     }
                     
                     response.forEach(function (entry) {
-                        console.log(entry);
+                       //console.log(entry);
                         
 
                         var table = '<tr>';
@@ -120,13 +120,13 @@ $('document').ready(function () {
                         $('.no-records-found').hide();
                     })
                 } else {
-                    console.log("C'est beau la vue");
+                   //console.log("C'est beau la vue");
                 }
             },
             error: function (response, status) {
-                console.log(response);
-                console.log(status);
-                console.log("C'est beau la vue");
+               //console.log(response);
+               //console.log(status);
+               //console.log("C'est beau la vue");
             }
         });
 
@@ -143,15 +143,13 @@ $('document').ready(function () {
             url: "data/submitPromo",
             type: "POST",
             data: {name: name, year: year },
-            dataType: "json",
 
             success: function (data) {
                promo();
             },
             error: function (response, status) {
-                console.log(response);
-                console.log(status);
-                console.log("C'est beau la vue");
+               //console.log(response);
+               //console.log(status);
             }
         });
 
@@ -167,13 +165,14 @@ $('document').ready(function () {
             data: {id: id, promo: promo },
 
             success: function (response, status) {
-                console.log(response);
+                //console.log(response);
                 user();
+                promo();
             },
             error: function (response, status) {
-                console.log(response);
-                console.log(status);
-                console.log("C'est beau la vue");
+               //console.log(response);
+               //console.log(status);
+               //console.log("C'est beau la vue");
             }
         });
 

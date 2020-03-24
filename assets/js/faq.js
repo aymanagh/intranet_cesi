@@ -13,12 +13,12 @@ function faq(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+          //console.log(response);
            if(response != "Vide"){
             $('#divFAQ').html('');
             response.forEach(function(entry) {
                 
-                console.log(entry);
+               //console.log(entry);
                 // built html in template with datas
                 var html = '<div id ="faq_'+entry['id_faq']+'"'+ 'class="col-sm-12">';
                 html += '<p>Question : <br>' +entry['question']+'</p>';
@@ -30,8 +30,8 @@ function faq(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }

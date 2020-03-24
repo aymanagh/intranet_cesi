@@ -38,8 +38,8 @@ function showConnected(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }
@@ -73,8 +73,8 @@ function showMessage(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }
@@ -95,8 +95,8 @@ function insertMessage(){
             $('#send').val('');
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }

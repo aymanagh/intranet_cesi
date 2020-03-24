@@ -13,11 +13,11 @@ function event(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+          //console.log(response);
            if(response != "Vide"){
             response.forEach(function(entry) {
                 
-                console.log(entry);
+               //console.log(entry);
                 // built html in template with datas
                 var html = '<div id=event_'+entry['id_event']+'> <div class="row">';
                 html += '<div class="col-sm-12"><h4>'+entry['name']+'</h4></div></div>';
@@ -30,8 +30,8 @@ function event(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }

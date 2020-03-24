@@ -12,7 +12,7 @@
         <div class="container container-face" style="border-radius : 25px">
             <!-- Title Top -->
             <div id ="container-face-promotion" class="row text-center"style="background-color : white; border-radius : 25px;">
-               <!-- face.js -->
+            <!-- face.js -->
             </div>
             <hr>
             <!-- Face Card -->
@@ -76,54 +76,6 @@
                     </div>
                 </div>
                 <!-- Face Card TEST -->
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Chuck Norris</h5>
-                        <p class="card-text">Promo : RIL-2019 <br>
-                        Apprenant   </p>
-                        <div class="row border-top border-dark">
-                            <div class="col-sm-6">
-                                <a href="mailto:contact.cesi.fr"><span title="Contacter Chuck Norris"><i class="far fa-envelope"></i></span></a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="#"><span title="Profil détaillé"><i class="far fa-address-card"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Chuck Norris</h5>
-                        <p class="card-text">Promo : RIL-2019 <br>
-                        Apprenant   </p>
-                        <div class="row border-top border-dark">
-                            <div class="col-sm-6">
-                                <a href="mailto:contact.cesi.fr"><span title="Contacter Chuck Norris"><i class="far fa-envelope"></i></span></a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="#"><span title="Profil détaillé"><i class="far fa-address-card"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
-                    <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Chuck Norris</h5>
-                        <p class="card-text">Promo : RIL-2019 <br>
-                        Apprenant   </p>
-                        <div class="row border-top border-dark">
-                            <div class="col-sm-6">
-                                <a href="mailto:contact.cesi.fr"><span title="Contacter Chuck Norris"><i class="far fa-envelope"></i></span></a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="#"><span title="Profil détaillé"><i class="far fa-address-card"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="text-center card border-dark mb-3 mt-1 ml-1 mr-1" style="width: 13rem;">
                     <img class="card-img-top" src="assets/cesi.jpg" alt="Card image cap">
                     <div class="card-body text-dark">

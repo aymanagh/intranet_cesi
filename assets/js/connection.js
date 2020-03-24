@@ -15,7 +15,7 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(data) {
-                console.log(data);
+               //console.log(data);
                 if(data['message'] == "mot de passe invalide"){
                     $(".alert").hide();
                     $(".alert-danger").show();
@@ -31,9 +31,9 @@ $(document).ready(function() {
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 //alert();
-                console.log(XMLHttpRequest);
-                console.log(textStatus);
-                console.log(errorThrown);
+               //console.log(XMLHttpRequest);
+               //console.log(textStatus);
+               //console.log(errorThrown);
             }
         });
     });
@@ -61,9 +61,9 @@ $(document).ready(function() {
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 //alert();
-                console.log(XMLHttpRequest);
-                console.log(textStatus);
-                console.log(errorThrown);
+               //console.log(XMLHttpRequest);
+               //console.log(textStatus);
+               //console.log(errorThrown);
             }
         });
     });
@@ -107,9 +107,9 @@ $(document).ready(function() {
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         //alert();
-                        console.log(XMLHttpRequest);
-                        console.log(textStatus);
-                        console.log(errorThrown);
+                       //console.log(XMLHttpRequest);
+                       //console.log(textStatus);
+                       //console.log(errorThrown);
                     }
                 });
             }

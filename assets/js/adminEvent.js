@@ -34,8 +34,8 @@ function event(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }
@@ -55,8 +55,8 @@ function deleteEvent(e){
            event();
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
     
@@ -103,8 +103,8 @@ function saveEvent(){
            event();
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });    
 

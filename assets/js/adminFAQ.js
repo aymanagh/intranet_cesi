@@ -29,8 +29,8 @@ function faq(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }
@@ -51,8 +51,8 @@ function deleteQ(e){
         faq();
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
     
@@ -93,8 +93,8 @@ function saveQ(){
         faq();
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });    
 

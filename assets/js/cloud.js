@@ -10,7 +10,7 @@ function displayCloud(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+          //console.log(response);
            if(response != "Vide"){
             response.forEach(function(entry) {
                 
@@ -22,8 +22,8 @@ function displayCloud(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }
@@ -52,7 +52,7 @@ function saveCloud(ele){
         contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
         processData: false, // NEEDED, DON'T OMIT THIS
         success : function(data){
-            console.log(data);
+           //console.log(data);
             if(data == "Erreur : Fichier obligatoirement en PDF"){
                alert("Erreur : Fichier obligatoirement en PDF")
 

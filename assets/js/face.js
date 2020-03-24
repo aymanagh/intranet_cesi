@@ -13,13 +13,13 @@ function face(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+          //console.log(response);
            if(response != "Vide"){
             var test = ""; 
 
             response.forEach(function(entry) {
                 
-                console.log(entry);
+               //console.log(entry);
                 // built html in template with datas
                 // result request filter by promo with email session user
                 test = '<div class="col-sm-12" ><h3>PROMOTION : '+entry['nomPromo']+'</h3></div></div><hr>'
@@ -89,8 +89,8 @@ function face(){
            }
         },
         error: function(response, status){
-            console.log(response);
-            console.log(status);
+           //console.log(response);
+           //console.log(status);
         }
     });
 }

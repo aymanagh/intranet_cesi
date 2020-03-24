@@ -480,19 +480,25 @@ class Handler
         ob_clean();
         echo $response; 
     }
+
     /**
-     * @function face
-     * display user profil filter by promo 
-     */
+    * @function face
+    * display user profil filter by promo 
+    */
     function face(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM  utilisateur ");
-
+        
+        // mail construction name with session
+        $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+ 
+        // request : select all user filter by promotion of session current user
+        $stmt = $pdo->prepare("SELECT user.id_user, user.last_name, first_name, address, promotion.name as nomPromo FROM user INNER JOIN promotion ON promotion.id_promotion = user.id_promotion WHERE promotion.name = (SELECT promotion.name FROM promotion INNER JOIN user ON promotion.id_promotion = user.id_promotion WHERE user.address = ? )");
+        $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+ 
         $face = executeSelectQueryMSQL($stmt);
-
         closePDO($pdo);
-
+ 
         if($face != "Empty"){
             $face = $this->utf8_converter($face);
             $response = json_encode($face);
@@ -501,9 +507,11 @@ class Handler
             $response = "Vide";
         }
         
+        // clear clear php
         ob_clean();
         echo $response; 
     }
+
     /**
      * @function utf8_converter
      * Make the conversion datas in utf-8
@@ -601,18 +609,10 @@ class Handler
         $stmt = $pdo->prepare("INSERT INTO promotion (name, year) VALUES (:name, :year)");
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':year', $year, PDO::PARAM_STR);
-
-        $promo = executeSelectQueryMSQL($stmt);
+        $stmt->execute();
 
         closePDO($pdo);
-
-        if ($promo != "Empty") {
-            $promo = $this->utf8_converter($promo);
-            $response = json_encode($promo);
-        } else {
-            $response = "Vide";
-        }
-        echo $response;
+        echo "ok";
     }
 
     /**
