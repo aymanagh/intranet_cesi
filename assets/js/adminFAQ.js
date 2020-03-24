@@ -14,12 +14,12 @@ function faq(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
            if(response != "Vide"){
             $('#tbodyAdminFAQ').html('');
             response.forEach(function(entry) {
                 
-                console.log(entry);
+                //console.log(entry);
                 var tr = "<tr><td>"+entry['question']+"</td>";
                 tr += "<td>"+entry['response']+"</td>";
                 tr += "<td><button id='"+entry['id_faq']+"' onclick='deleteQ(this)' type='button' class='btn btn-warning'>Supprimer</button></td></tr>";
@@ -47,7 +47,7 @@ function deleteQ(e){
             id: id
         }),
         success : function(response, status){
-        console.log(response);
+        //console.log(response);
         faq();
         },
         error: function(response, status){
@@ -89,7 +89,7 @@ function saveQ(){
             response: response
         }),
         success : function(response, status){
-        console.log(response);
+        //console.log(response);
         faq();
         },
         error: function(response, status){

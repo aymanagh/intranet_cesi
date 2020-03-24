@@ -9,10 +9,10 @@ $('document').ready(function(){
             data: "",
             dataType: "json",
             success : function(response, status){
-               console.log(response);
+               //console.log(response);
                if(response != "Vide"){
                 response.forEach(function(entry) {
-                    console.log(entry);
+                    //console.log(entry);
                     
                     var html = '<tr>';
                     html += '<td>Jean</td>';

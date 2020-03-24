@@ -14,12 +14,12 @@ function event(){
         data: "",
         dataType: "json",
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
            if(response != "Vide"){
             $('#tbodyAdminEvent').html('');
             response.forEach(function(entry) {
                 
-                console.log(entry);
+                //console.log(entry);
 
                 var tr = "<tr><td>"+entry['name']+"</td>";
                 tr += "<td>"+entry['date']+"</td>";
@@ -51,7 +51,7 @@ function deleteEvent(e){
             id: id
         }),
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
            event();
         },
         error: function(response, status){
@@ -99,7 +99,7 @@ function saveEvent(){
             textarea: textarea
         }),
         success : function(response, status){
-           console.log(response);
+           //console.log(response);
            event();
         },
         error: function(response, status){
