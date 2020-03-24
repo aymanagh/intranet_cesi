@@ -16,14 +16,16 @@ if (!isset($_SESSION)) {
 /**
  * Class Handler
  */
-class Handler {
+class Handler
+{
     /**
      * Ce controller prend en paramètres le type de données que l'on souhaite récupérer
      * Il va lancer la fonction qui correspond et renvoyer le json au fichier restcontroller
      * @param $type
      * @return string
      */
-    function HandlerController($type) {
+    function HandlerController($type)
+    {
         date_default_timezone_set('Europe/Paris');
 
         switch ($type) {
@@ -103,16 +105,6 @@ class Handler {
                 } else {
                     $result = "Erreur:GSx0010";
                 }
-                break;                 
-                
-                break; 
-            case "adminPromos":
-                if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                    $result = $this->adminPromos();
-                    
-                }else{
-                    $result = "Erreur:GSx0007";
-                }
                 break;
             case "deleteEvent":
                 if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -145,27 +137,63 @@ class Handler {
                     $result = "Erreur:GSx0007";
                 }
                 break;                   
+            case "user":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->selectUser();
+                } else {
+                    $result = "Erreur:GSx0007";
+                }
+                break;
+            case "userFilter":
+                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                    $result = $this->selectUserFilter();
+                } else {
+                    $result = "Erreur:GSx0008";
+                }
+                break;
+            case "promo":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->selectPromo();
+                } else {
+                    $result = "Erreur:GSx0009";
+                }
+                break;
+            case "submitPromo":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->insertPromo();
+                } else {
+                    $result = "Erreur:GSx0010";
+                }
+                break;
+            case "modifyPromo":
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $result = $this->modifyPromo();
+                } else {
+                    $result = "Erreur:GSx0010";
+                }
+                break;
             default:
                 $result = "Erreur: GSx0099";
                 break;
         }
         return $result;
     }
-  
+
     /**
      * @function connexion
      * User Connexion with mail and password
      */
-    function connection() {
+    function connection()
+    {
         $response = [];
 
-        if(!empty($_POST['mail']) && !empty($_POST['mdp'])){
+        if (!empty($_POST['mail']) && !empty($_POST['mdp'])) {
             //connection to check if user exist
-        
+
             //get value from js
             $mail = $_POST['mail'];
             $mdp = $_POST['mdp'];
-        
+
             //pdo
             $pdo = connectionPDO();
             $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? ');
@@ -195,14 +223,14 @@ class Handler {
                 } else {
                     $response['message'] = "mot de passe invalide";
                 }
-            }else{
+            } else {
                 $response['message'] = "compte non existant";
             }
     
         }else{
             $response['message'] = "Veuillez remplir tous les champs";
         }
-    
+
         $response = json_encode($response);
         ob_clean();
         echo $response;
@@ -212,16 +240,17 @@ class Handler {
      * @function mailForget
      * User Forget mail, check mail and send this
      */
-    function mailForget() {
-        $response ="erreur";
+    function mailForget()
+    {
+        $response = "erreur";
 
-        if(!empty($_POST['mailForget'])){
+        if (!empty($_POST['mailForget'])) {
             //connection to check if user exist
             $response = [];
-        
+
             //get value from js
             $mail = $_POST['mailForget'];
-        
+
             //pdo
             $pdo = connectionPDO();
             $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? ');
@@ -229,17 +258,17 @@ class Handler {
             $stmt->execute();
             $user = $stmt->fetch();
             closePDO($pdo);
-        
-            if(!empty($user)){
+
+            if (!empty($user)) {
                 //url value
                 $mail = $user['address'];
-        
+
                 //create token and date
                 $token = random_bytes(5);
                 $token = bin2hex($token);
                 $date = new DateTime();
                 $date = $date->format('Y-m-d H:i:s');
-        
+
                 //insert token and date
                 $pdo = connectionPDO();
                 $stmt = $pdo->prepare("UPDATE user SET token = ?, date_token = ? WHERE user.address = ?");
@@ -248,19 +277,19 @@ class Handler {
                 $stmt->bindParam(3, $mail, PDO::PARAM_STR);
                 $stmt->execute();
                 closePDO($pdo);
-        
+
                 ////prepare url and send mail
-                $url = "http://localhost/intranet_cesi/resetPassword?reset=".$mail."&tok=".$token;
-        
+                $url = "http://localhost/intranet_cesi/resetPassword?reset=" . $mail . "&tok=" . $token;
+
                 $to      = 'ayman.agharbi@viacesi.fr';
                 $subject = 'Changer de mot de passe';
-                $message = 'Pour changer le mot de passe de votre accès à l"intranet CESI, cliquer sur l"url suivant : '.$url;
+                $message = 'Pour changer le mot de passe de votre accès à l"intranet CESI, cliquer sur l"url suivant : ' . $url;
                 $headers = array(
                     'From' => 'cesi',
                     'Reply-To' => $mail,
                     'X-Mailer' => 'PHP/' . phpversion()
                 );
-        
+
                 //$success = mail($to, $subject, $message, $headers);
                 /*if (!$success) {
                     $errorMessage = error_get_last()['message'];
@@ -277,19 +306,20 @@ class Handler {
     /**
      * @function changePassword
      * User change password, check old password 
-     */ 
-    function changePassword() {
-        $response ="erreur";
+     */
+    function changePassword()
+    {
+        $response = "erreur";
 
-        if(!empty($_POST['inputPassword']) && !empty($_POST['mail']) && !empty($_POST['token'])){
+        if (!empty($_POST['inputPassword']) && !empty($_POST['mail']) && !empty($_POST['token'])) {
             //connection to check if user exist
             $response = [];
-        
+
             //get value from js
             $mail = $_POST['mail'];
             $password = $_POST['inputPassword'];
             $token = $_POST['token'];
-        
+
             //pdo
             $pdo = connectionPDO();
             $stmt = $pdo->prepare('SELECT * FROM user WHERE user.address = ? AND token = ?');
@@ -297,26 +327,26 @@ class Handler {
             $stmt->bindParam(2, $token, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch();
-            
-            if(!empty($user)){
+
+            if (!empty($user)) {
                 $mail = $user['address'];
                 $token = $user['token'];
                 $dateEndToken = $user['date_token'];
-                
+
                 $date = new DateTime();
                 $date = $date->format('Y-m-d H:i:s');
-        
+
                 //$response['message'] = "compte existant";
 
                 $date1 = new DateTime($dateEndToken);
                 $date2 = new DateTime($date);
-                
-                $diff = $date2->diff($date1);
-                
-                $hours = $diff->h;
-                $hours = $hours + ($diff->days*24);
 
-                if(($hours < 1) && ($token == $user['token'])){
+                $diff = $date2->diff($date1);
+
+                $hours = $diff->h;
+                $hours = $hours + ($diff->days * 24);
+
+                if (($hours < 1) && ($token == $user['token'])) {
                     $mdp = password_hash($password, PASSWORD_DEFAULT);
 
                     $pdo = connectionPDO();
@@ -324,20 +354,19 @@ class Handler {
                     $stmt->bindParam(1, $mdp, PDO::PARAM_STR);
                     $stmt->bindParam(2, $mail, PDO::PARAM_STR);
                     $stmt->execute();
-                    closePDO($pdo);  
-                    
+                    closePDO($pdo);
+
                     $response['message'] = 'mot de passe changé';
-                }else{
+                } else {
                     $response['message'] = 'le token a expiré';
                 }
-                
-            }else{
+            } else {
                 $response['message'] = "compte non existant";
             }
-        
+
             closePDO($stmt);
         }
-        
+
         $response = json_encode($response);
         ob_clean();
         echo $response;
@@ -347,9 +376,10 @@ class Handler {
      * @function checkConnection
      * check the connection with session and token
      */
-    function checkConnection(){
+    function checkConnection()
+    {
         $result = "";
-        if(isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])){
+        if (isset($_SESSION['mail']) && isset($_SESSION['mdp']) && isset($_SESSION['tokenConnection'])) {
             $date = date("Y-d-m");
 
             $tokenverif = $_SESSION['mail'] . $_SESSION['mdp'] . sha1($date);
@@ -361,8 +391,7 @@ class Handler {
                 $result = "token invalide";
                 //$result = $tokenverif." ".$_SESSION['tokenConnection'];
             }
-
-        }else{
+        } else {
             $result = "token inexistant";
         }
         ob_clean();
@@ -390,7 +419,8 @@ class Handler {
      * @function faq
      * display ALL data from faq table
      */
-    function faq(){
+    function faq()
+    {
         //pdo
         $pdo = connectionPDO();
         $stmt = $pdo->prepare("SELECT * FROM faq");
@@ -399,11 +429,10 @@ class Handler {
 
         closePDO($pdo);
 
-        if($faq != "Empty"){
+        if ($faq != "Empty") {
             $faq = $this->utf8_converter($faq);
             $response = json_encode($faq);
-        }
-        else {
+        } else {
             $response = "Vide";
         }
 
@@ -464,34 +493,145 @@ class Handler {
      * Make the conversion datas in utf-8
      */
     /**
-     * @function admin_promos
+     * @function selectPromo
      * display data from promo table
      */
-    function adminPromos(){
-        //pdo 
+    function selectPromo()
+    {
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM promotion");
+        $stmt = $pdo->prepare("SELECT distinct * FROM promotion");
 
-        $admin_promos = executeSelectQueryMSQL($stmt);
+        $promos = executeSelectQueryMSQL($stmt);
+
 
         closePDO($pdo);
-        
 
-        if($admin_promos != "Empty"){
-            $admin_promos = $this->utf8_converter($admin_promos);
-            $response = json_encode($admin_promos);
-        }else{
+
+        if ($promos != "Empty") {
+            $promos = $this->utf8_converter($promos);
+            $response = json_encode($promos);
+        } else {
             $response = "Vide";
         }
         echo $response;
+    }
+
+    /**
+     * @function selectUserFilter
+     * display data from user table
+     */
+    function selectUserFilter()
+    {
+        //pdo
+        $pdo = connectionPDO();
+
+        $filter_promos = $_GET['promo'];
+
+        if (!empty($filter_promos)) {
+            $stmt = $pdo->prepare('SELECT * FROM user inner join promotion on user.id_promotion = promotion.id_promotion where promotion.id_promotion = :filter_promos');
+            $stmt->bindParam(':filter_promos', $filter_promos, PDO::PARAM_INT);
+
+            $user = executeSelectQueryMSQL($stmt);
+
+            closePDO($pdo);
+
+            if ($user != "Empty") {
+                $user = $this->utf8_converter($user);
+                $response = json_encode($user);
+            } else {
+                $response = "Vide";
+            }
+            echo $response;
+        }
+    }
+
+    /**
+     * @function selectUser
+     * display data from user table
+     */
+    function selectUser()
+    {
+        //pdo
+        $pdo = connectionPDO();
+
+        $stmt = $pdo->prepare('SELECT * FROM user inner join promotion on user.id_promotion = promotion.id_promotion');
+
+        $user = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if ($user != "Empty") {
+            $user = $this->utf8_converter($user);
+            $response = json_encode($user);
+        } else {
+            $response = "Vide";
+        }
+        echo $response;
+    }
+
+    /**
+     * @function insertPromo
+     * display data from user table
+     */
+
+    function insertPromo()
+    {
+        //pdo
+        $pdo = connectionPDO();
+
+        $name = $_POST['name'];
+        $year = $_POST['year'];
+
+        $stmt = $pdo->prepare("INSERT INTO promotion (name, year) VALUES (:name, :year)");
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':year', $year, PDO::PARAM_STR);
+
+        $promo = executeSelectQueryMSQL($stmt);
+
+        closePDO($pdo);
+
+        if ($promo != "Empty") {
+            $promo = $this->utf8_converter($promo);
+            $response = json_encode($promo);
+        } else {
+            $response = "Vide";
+        }
+        echo $response;
+    }
+
+    /**
+     * @function modifyPromo
+     * display data from user table
+     */
+
+    function modifyPromo()
+    {
+        //pdo
+        $pdo = connectionPDO();
+
+        $id = $_POST['id'];
+        $promo = $_POST['promo'];
+        
+
+        $stmt = $pdo->prepare('UPDATE user SET user.id_promotion = :id_promotion WHERE user.id_user = :id');
+        $stmt->bindParam(':id_promotion', $promo, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        closePDO($pdo);
+
+        echo 'ok';
 
     }
 
+
+
     function utf8_converter($array)
     {
-        array_walk_recursive($array, function(&$item, $key){
-            if(!mb_detect_encoding($item, 'utf-8', true)){
-                    $item = utf8_encode($item);
+        array_walk_recursive($array, function (&$item, $key) {
+            if (!mb_detect_encoding($item, 'utf-8', true)) {
+                $item = utf8_encode($item);
             }
         });
 
@@ -676,7 +816,3 @@ class Handler {
         echo "ok";  
     }  
 }
-
-
-
-
