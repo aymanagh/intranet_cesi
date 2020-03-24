@@ -17,6 +17,10 @@ function closePDO($pdo){
     unset($pdo);
 }
 
+/**
+ * Function executeSelectQueryMYSQL
+ * make execute , fetchall and verify if empty table
+ */
 function executeSelectQueryMSQL($stmt) {
     $stmt->execute();
     $resultset = $stmt->fetchAll(PDO::FETCH_ASSOC);    
