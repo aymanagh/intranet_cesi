@@ -210,8 +210,67 @@ section .section-title {
   border-radius: 50%;
   color: white;
 }
-
 }
 h4 {
   font-family: 'Oswald', sans-serif;
+}
+.actu {
+  height: 25em;
+}
+.card-info {
+  background-color: #ffffff;
+}
+.text-event:hover {
+  color: #ffc853;
+}
+.event {
+  height: 11em;
+  overflow: hidden;
+  margin-top: 1em;
+  background-color: whitesmoke;
+  border-radius: 24px;
+}
+.card-text {
+  height: 6em;
+  overflow: hidden;
+  margin-top: 1em;
+}
+.card-planning {
+  background-color: #ffc853;
+}
+.card-planning-title {
+  background-color: white;
+  padding: 1em;
+  font-size: 19px;
+  font-weight: bold;
+  border-radius: 18px;
+}
+.card-info {
+  background-color: #ffc853;
+}
+.notif {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.img-actu {
+  height: 100%;
+  width: 100%;
+}
+.card-actu {
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+.card-actu-global {
+  overflow: scroll;
+  height: 25em;
+}
+.card-info {
+  height: 25em;
+  overflow: scroll;
+}
+.card-time {
+  height: 25em;
+  background-color: #ffc853;
 }
