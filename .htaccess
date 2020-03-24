@@ -30,5 +30,4 @@ RewriteRule ^adminProfil(/|)$ view/adminProfil.php [nc,qsa]
 RewriteRule ^adminPromos(/|)$ view/adminPromos.php [nc,qsa]
 
 
-
-RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|adminPromos)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|promo|userFilter|user|submitPromo|modifyPromo)(/|) controllers/RestController.php?type=$1 [nc,qsa]
