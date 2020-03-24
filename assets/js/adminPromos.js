@@ -14,12 +14,15 @@ $('document').ready(function () {
             success: function (response, status) {
                 console.log(response);
                 if (response != "Vide") {
+                    if(!$('#data').html('')){
+                        $('#data').html('');
+                    }
                     response.forEach(function (entry) {
                         console.log(entry);
 
                         var html = '<option value="' + entry['id_promotion'] + '">' + entry['name'] + '</option>';
 
-                        $('.data').append(html);
+                        $('#data').append(html);
 
                     })
                 }

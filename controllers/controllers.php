@@ -172,6 +172,22 @@ class Handler
                     $result = "Erreur:GSx0010";
                 }
                 break;
+            case "cloud":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->cloud();
+                    
+                }else{
+                    $result = "Erreur:GSx0013";
+                }
+                break;
+            case "displayCloud":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->displayCloud();
+                    
+                }else{
+                    $result = "Erreur:GSx0014";
+                }
+                break;
             default:
                 $result = "Erreur: GSx0099";
                 break;
@@ -815,4 +831,97 @@ class Handler
         ob_clean();
         echo "ok";  
     }  
+
+
+    /**
+    * @function cloud
+    * display file to download for "Apprenant"
+    * display upload file for "Intervenant "
+    */
+    function cloud(){
+ 
+        $true = 1;
+        $nameFile = "";
+        $result= "ok ";
+ 
+        // upload file pdf
+        if (isset($_FILES['fileToUpload']['name'])) {
+            $info = pathinfo($_FILES['fileToUpload']['name']);
+            $ext = $info['extension']; // get the extension of the file
+            $nameFile = $info['basename'];
+            if($ext != "pdf"){
+                $true = 0;
+                $result = "Erreur : Fichier obligatoirement en PDF";
+            }else{
+                $target = '../filePDF/'.$nameFile;
+            }
+        }else{
+            $true = 0;
+            $result = "Erreur : Image vide";
+        }
+ 
+        // if true upload pdf.file into > filePDF 
+        if ($true == 1) {
+            if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target)){
+ 
+                $result= "Image uploadée avec succès !";
+                $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+ 
+                //pdo
+                $pdo = connectionPDO();
+                $stmt = $pdo->prepare('SELECT id_user FROM user WHERE user.address = ?');
+                $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+                $stmt->execute();
+                $user = $stmt->fetch();
+ 
+                $id_user = $user['id_user'];
+                closePDO($pdo);
+ 
+                // get variable from ajax (cloud.js)
+                $discpline = $_POST['matiere'];
+                $name = $_POST['libelle'];
+                
+                // pdo
+                $pdo = connectionPDO();
+                
+                $stmt = $pdo->prepare("INSERT INTO cloud (discipline, name, name_file, id_user) VALUES (?, ?, ?, ?)");
+                $stmt->bindParam(1, $discpline, PDO::PARAM_STR);
+                $stmt->bindParam(2, $name, PDO::PARAM_STR);
+                $stmt->bindParam(3, $nameFile, PDO::PARAM_STR);
+                $stmt->bindParam(4, $id_user, PDO::PARAM_INT);
+                $stmt->execute();
+                closePDO($pdo);
+                
+            }else{
+                $result= "Erreur : Echec telechargement de l'image";
+            }
+        }
+        // clear clear php
+        ob_clean();
+ 
+        echo $result;  
+    }
+ 
+    function displayCloud(){
+ 
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("SELECT * FROM cloud ");
+ 
+        $displayCloud = executeSelectQueryMSQL($stmt);
+ 
+        closePDO($pdo);
+ 
+        if($displayCloud != "Empty"){
+            $displayCloud = $this->utf8_converter($displayCloud);
+            $response = json_encode($displayCloud);
+        }
+        else {
+            $response = "Vide";
+        }
+ 
+        // clear clear php
+        ob_clean();
+        echo $response;  
+    }
 }
