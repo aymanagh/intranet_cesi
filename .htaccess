@@ -23,7 +23,6 @@ RewriteRule ^resetPassword(/|)$ view/resetPassword.php [nc,qsa]
 RewriteRule ^home(/|)$ view/home.php [nc,qsa]
 RewriteRule ^face(/|)$ view/face.php [nc,qsa]
 RewriteRule ^event(/|)$ view/event.php [nc,qsa]
-RewriteRule ^cloud(/|)$ view/cloud.php [nc,qsa]
 RewriteRule ^notifications(/|)$ view/notifications.php [nc,qsa]
 RewriteRule ^faq(/|)$ view/faq.php [nc,qsa]
 RewriteRule ^chat(/|)$ view/chat.php [nc,qsa]
@@ -31,5 +30,8 @@ RewriteRule ^adminProfil(/|)$ view/adminProfil.php [nc,qsa]
 RewriteRule ^adminPromos(/|)$ view/adminPromos.php [nc,qsa]
 RewriteRule ^adminEvent(/|)$ view/adminEvent.php [nc,qsa]
 RewriteRule ^adminFAQ(/|)$ view/adminFAQ.php [nc,qsa]
+RewriteRule ^cloud(/|)$ view/cloud.php [nc,qsa]
 
-RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|adminPromos|event|face|showConnected|showMessage|insertMessage|deleteEvent|saveEvent|deleteQ|saveQ|promo|userFilter|user|submitPromo|modifyPromo)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+RewriteRule ^data/(connection|mailForget|changePassword|checkConnection|deconnection|faq|adminPromos|event|face|showConnected|showMessage|insertMessage|deleteEvent|saveEvent|deleteQ|saveQ|promo|userFilter|user|submitPromo|modifyPromo|cloud|displayCloud)(/|) controllers/RestController.php?type=$1 [nc,qsa]
+
+

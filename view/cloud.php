@@ -17,52 +17,26 @@
             </div>
         
             <h2>Cours - (Promotion)</h2>
-                    
+            
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Date</th>
                     <th>Matière</th>
                     <th>Nom du cours</th>
                     <th>Intervenant</th>
                     <th>Télécharger / Uploader</th>
                 </tr>
                 </thead>
-                <tbody>
+
+                <tbody id="displayCloud">
+                    <!-- cloud.js -->
                 <tr>
-                    <td>12/02/85</td>
-                    <td>MySQL</td>
-                    <td>Base de données</td>
-                    <td>Florian Pichon</td>
-                    <td> <i class="fas fa-file-alt"></i> "Nom du cours" / selon le rôle
-                        <form>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="customeFile">
-                                <label class="custom-file-label" for="customFile">Sélectionnez le fichier</label>
-                            </div>
-                        </form>
-                    <script>
-                    // Add the following code if you want the name of the file appear on select
-                    $(".custom-file-input").on("change", function() {
-                    var fileName = $(this).val().split("\\").pop();
-                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                    });
-                    </script> 
-                </td>
-                </tr>
-                <tr>
-                    <td>12/02/85</td>
-                    <td>MySQL</td>
-                    <td>Base de données</td>
-                    <td>Florian Pichon</td>
-                    <td>Fichier</td>
-                </tr>
-                <tr>
-                    <td>12/02/85</td>
-                    <td>MySQL</td>
-                    <td>Base de données</td>
-                    <td>Florian Pichon</td>
-                    <td>Fichier</td>
+                    <td> <input id="inputMatiere" type="text" value=""></td>
+                    <td> <input id="inputLibelle" type="text" value=""></td>
+                    <td> </td>
+                    <td> 
+                    <input type="file" class="upload" id="upload" name="fileToUpload">
+                    <button onclick = 'saveCloud(this)'>Uploader</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -74,4 +48,5 @@
             <?php include('footer.php') ?>
         </section>
     </body>
+    <script src="assets/js/cloud.js"></script>
 </html>
