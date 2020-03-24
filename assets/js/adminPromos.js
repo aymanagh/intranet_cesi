@@ -19,7 +19,6 @@ $('document').ready(function () {
 
                         var html = '<option value="' + entry['id_promotion'] + '">' + entry['name'] + '</option>';
 
-
                         $('.data').append(html);
 
                     })
@@ -144,7 +143,7 @@ $('document').ready(function () {
             dataType: "json",
 
             success: function (data) {
-               
+               promo();
             },
             error: function (response, status) {
                 console.log(response);
