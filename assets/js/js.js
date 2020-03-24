@@ -14,9 +14,12 @@ $('document').ready(function(){
                 case "token invalide" :
                     document.location.href = "login";
                     break;
-                default : 
+                default :
                     break;
             }
+            response = response.split(':!');
+            console.log(response);
+            $("#namSpan").html(response[1]);
         },
         error: function(response, status){
             console.log(response);

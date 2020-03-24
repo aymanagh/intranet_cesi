@@ -149,8 +149,8 @@ class Handler {
                     $_SESSION['mail'] = sha1($mail);
                     $_SESSION['mdp'] = sha1($mdp);
                     $_SESSION['tokenConnection'] = sha1($mail) . sha1($mdp) . sha1($date);
-                    $_SESSION['nom'] = $user['last_name'];
-                    $_SESSION['prenom'] = $user['first_name'];
+                    $_SESSION['nom'] = strtolower($user['last_name']);
+                    $_SESSION['prenom'] = strtolower($user['first_name']);
 
                     //insert token and date
                     $pdo = connectionPDO();
@@ -322,7 +322,8 @@ class Handler {
             $tokenverif = $_SESSION['mail'] . $_SESSION['mdp'] . sha1($date);
 
             if($tokenverif == $_SESSION['tokenConnection']){
-                $result = "token valide";
+                $result = "token valide:!".$_SESSION['nom']." ".$_SESSION['prenom'];
+                
             }else{
                 $result = "token invalide";
                 //$result = $tokenverif." ".$_SESSION['tokenConnection'];
@@ -384,8 +385,7 @@ class Handler {
     function event(){
         //pdo
         $pdo = connectionPDO();
-      
-        $stmt = $pdo->prepare("SELECT * FROM  event");
+        $stmt = $pdo->prepare("SELECT * FROM  evenement");
 
         $event = executeSelectQueryMSQL($stmt);
 
@@ -407,9 +407,6 @@ class Handler {
      * display user profil filter by promo 
      */
     function face(){
-        // get session mail
-        $nomPrenom = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
-
         //pdo
         $pdo = connectionPDO();
         
@@ -434,7 +431,6 @@ class Handler {
         echo $response; 
     }
     
-   
     /**
      * @function admin_promos
      * display data from promo table

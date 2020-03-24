@@ -35,10 +35,7 @@
       <li class="nav-item">
         <a class="nav-link" href="faq">FAQ</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" onclick="deconnection()" href="">Déconnexion</a>
-      </li>
-      <li class="nav-item dropdown">
+<!--       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
           Panneau Administrateur
         </a>
@@ -47,20 +44,13 @@
           <a class="dropdown-item" href="#">Link 2</a>
           <a class="dropdown-item" href="#">Link 3</a>
         </div>
-    </li>
+    </li> -->
     </ul>
     <ul class="navbar-nav ml-auto">
-      <a href="./notifications.php" class="notification">
-        <i class="fas fa-bell"></i>
-        <span class="badge">12</span>&nbsp;&nbsp;
-      </a>
-    </ul>
-    </ul>
-    <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user" style="color : white; "></i>
-        <span style="color : white">Stéphane LAVARIE</span>
+        <span style="color : white" id="namSpan"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <!-- Administration des profils que pour les admins -->
@@ -69,6 +59,16 @@
           <a class="dropdown-item" href="#">Déconnexion</a>
         </div>
       </li>
+    </ul>
+    <ul class="navbar-nav">
+      <a href="" class="notification">
+        <i class="fas fa-bell"></i>
+        <span class="badge">12</span>&nbsp;&nbsp;
+      </a>
+    </ul>
+    </ul>
+    <ul class="navbar-nav">
+        <a class="nav-link" onclick="deconnection()" href=""><i class="fas fa-sign-out-alt"></i></a>
     </ul>
   </div>
 </nav>
