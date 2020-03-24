@@ -56,7 +56,8 @@
           <!-- Administration des profils que pour les admins -->
           <a class="dropdown-item" href="adminProfil">Administration des profils</a>
           <a class="dropdown-item" href="adminPromos">Administration des promotions</a>
-          <a class="dropdown-item" href="#">Déconnexion</a>
+          <a class="dropdown-item" href="adminEvent">Administration des evènements</a>
+          <a class="dropdown-item" href="adminFAQ">Administration de la FAQ</a>
         </div>
       </li>
     </ul>

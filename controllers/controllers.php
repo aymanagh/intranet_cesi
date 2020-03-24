@@ -114,6 +114,37 @@ class Handler {
                     $result = "Erreur:GSx0007";
                 }
                 break;
+            case "deleteEvent":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->deleteEvent();
+                    
+                }else{
+                    $result = "Erreur:GSx0007";
+                }
+                break;
+            case "saveEvent":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->saveEvent();
+                    
+                }else{
+                    $result = "Erreur:GSx0007";
+                }
+                break;
+            case "deleteQ":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->deleteQ();
+                    
+                }else{
+                    $result = "Erreur:GSx0007";
+                }
+                break;            
+            case "saveQ":
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $result = $this->saveQ();         
+                }else{
+                    $result = "Erreur:GSx0007";
+                }
+                break;                   
             default:
                 $result = "Erreur: GSx0099";
                 break;
@@ -387,7 +418,7 @@ class Handler {
     function event(){
         //pdo
         $pdo = connectionPDO();
-        $stmt = $pdo->prepare("SELECT * FROM  evenement");
+        $stmt = $pdo->prepare("SELECT * FROM  event");
 
         $event = executeSelectQueryMSQL($stmt);
 
@@ -535,8 +566,7 @@ class Handler {
         $stmt->execute();
         $user = $stmt->fetch();
 
-        $id_user = $user['id_user'];
-        echo var_dump($mail);  
+        $id_user = $user['id_user']; 
         
         $pdo2 = connectionPDO();
         $stmt2 = $pdo2->prepare("INSERT INTO message (id_user, content, date) VALUES (?, ?, NOW())");
@@ -549,7 +579,102 @@ class Handler {
         echo "ok";  
     }   
 
+     /**
+     * @function insertMessage
+     * insert message
+     */
+    function deleteEvent(){
+
+        $id = $_POST['id'];
+
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("DELETE FROM event WHERE id_event = ?");
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
+        closePDO($pdo);
+
+        ob_clean();
+        echo "ok";  
+    }
     
+         /**
+     * @function saveEvent
+     * insert event in database
+     */
+    function saveEvent(){
+
+        $name = $_POST['nom'];
+        $date = $_POST['date'];
+        $location = $_POST['location'];
+        $textarea = $_POST['textarea'];
+ 
+        $mail = $_SESSION['prenom'].".".$_SESSION['nom']."@viacesi.fr";
+
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare('SELECT id_user FROM user WHERE user.address = ?');
+        $stmt->bindParam(1, $mail, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        closePDO($pdo);
+
+        $id_user = $user['id_user']; 
+
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("INSERT INTO event (name, date, location, content, id_user) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bindParam(1, $name, PDO::PARAM_STR);
+        $stmt->bindParam(2, $date, PDO::PARAM_STR);
+        $stmt->bindParam(3, $location, PDO::PARAM_STR);
+        $stmt->bindParam(4, $textarea, PDO::PARAM_STR);
+        $stmt->bindParam(5, $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+        closePDO($pdo);
+
+        ob_clean();
+        echo "ok";  
+    }  
+    
+    /**
+    * @function insertMessage
+    * insert message
+    */
+    function deleteQ(){
+
+        $id = $_POST['id'];
+
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("DELETE FROM faq WHERE id_faq = ?");
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
+        closePDO($pdo);
+
+        ob_clean();
+        echo "ok";  
+    }
+
+    /**
+    * @function saveEvent
+    * insert event in database
+    */
+    function saveQ(){
+
+        $question = $_POST['question'];
+        $response = $_POST['response'];
+
+        //pdo
+        $pdo = connectionPDO();
+        $stmt = $pdo->prepare("INSERT INTO faq (question, response) VALUES (?, ?)");
+        $stmt->bindParam(1, $question, PDO::PARAM_STR);
+        $stmt->bindParam(2, $response, PDO::PARAM_STR);
+        $stmt->execute();
+        closePDO($pdo);
+
+        ob_clean();
+        echo "ok";  
+    }  
 }
 
 
