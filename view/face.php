@@ -9,7 +9,7 @@
     <!-- import Navbar -->
     <?php include('navbar.php')?>
         <!-- Container -->
-        <div class="container-face-title container container-cesi ">
+        <div class="container container-face" style="border-radius : 25px">
             <!-- Title Top -->
             <div id ="container-face-promotion" class="row text-center"style="background-color : white; border-radius : 25px;">
                <!-- face.js -->

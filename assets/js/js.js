@@ -41,6 +41,6 @@ function deconnection(){
     });
 }
 
-window.onbeforeunload = function (e) {
-    this.deconnection();
-};
+//window.onbeforeunload = function (e) {
+    //this.deconnection();
+//};

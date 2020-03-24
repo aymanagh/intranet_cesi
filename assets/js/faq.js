@@ -22,7 +22,7 @@ function faq(){
                 var html = '<div id ="faq_'+entry['id_faq']+'"'+ 'class="row">';
                 html += '<div class="col-sm-12">';
                 html += '<p>Question : <br>' +entry['question']+'</p>';
-                html += '<p class="font-weight-bold">Réponse : <br>' +entry['reponse']+'</p>';
+                html += '<p class="font-weight-bold">Réponse : <br>' +entry['response']+'</p>';
                 html += '</div></div><hr></hr>';
                 
                 $('#container-faq').append(html);

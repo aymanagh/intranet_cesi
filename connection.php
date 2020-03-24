@@ -1,14 +1,12 @@
 <?php
 
 function connectionPDO(){
-    //Configuration Connection Database
-    
-    define("USER", 'root');
-    define("PASSWORD", '');
-    define("DSN", 'mysql:host=localhost;dbname=intranet_cesi;port=3308');
 
+    //Configuration Connection Database
+ 
+    //test
     try {
-        $pdo = new PDO(DSN, USER, PASSWORD);
+        $pdo = new PDO('mysql:host=localhost;dbname=intranet_cesi;port=3308', 'root', '');
         return $pdo;
     } catch (PDOException $e) {
         die("Error Database Connection! : " . $e->getMessage());

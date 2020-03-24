@@ -1,6 +1,6 @@
 /**
  * Ajax Function event
- * Display Cesi's event
+ * Display Cesi's profil user filter by session user
  */
 $('document').ready(function(){
     face();
